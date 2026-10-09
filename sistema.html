@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@300..800&family=Radio+Canada+Big:wght@400..700&family=Radio+Canada:wght@300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/jd.css?v=203">
+<link rel="stylesheet" href="assets/jd.css?v=205">
 </head>
 <body class="ed">
 
@@ -45,7 +45,7 @@
       <p class="big" lang="es">Cuatro ideas que el sistema <mark>no negocia</mark>.</p>
       <p class="big" lang="en">Four ideas the system <mark>never trades away</mark>.</p>
       <div class="docs mt-5">
-        <div><span class="mono mute">01</span><h4 lang="es">Claro, con grano de papel</h4><h4 lang="en">Light, with a paper grain</h4><p lang="es">El fondo es un hueso frío con un ruido fino, como papel impreso. Las pantallas de interfaz blanca se separan con un borde de 1px, sin marco ni sombra y sin fondo oscuro.</p><p lang="en">The background is a cool off-white with a fine grain, like printed paper. White interface screens separate with a 1px border, with no frame, no shadow and no dark background.</p></div>
+        <div><span class="mono mute">01</span><h4 lang="es">Claro, con grano de papel</h4><h4 lang="en">Light, with a paper grain</h4><p lang="es">El fondo es un hueso frío con un ruido fino, como papel impreso. Las pantallas de interfaz blanca se separan con un borde de 1px, sin marco ni sombra. La tinta como fondo se reserva para las portadas: la cabecera de cada caso y el panel de las capturas en la portada del sitio.</p><p lang="en">The background is a cool off-white with a fine grain, like printed paper. White interface screens separate with a 1px border, with no frame and no shadow. Ink as a background is kept for covers: each case header and the screenshot panel on the site home.</p></div>
         <div><span class="mono mute">02</span><h4 lang="es">Letras que se leen desde lejos</h4><h4 lang="en">Letters you can read from afar</h4><p lang="es">Títulos y texto de una misma familia pensada para pantalla, con aperturas abiertas y seguimiento positivo de +0,012em. Nada por debajo de 13px.</p><p lang="en">Titles and text from one family made for screens, with open apertures and positive tracking of +0.012em. Nothing below 13px.</p></div>
         <div><span class="mono mute">03</span><h4 lang="es">La jerarquía la hace la letra</h4><h4 lang="en">Type makes the hierarchy</h4><p lang="es">Las secciones son capítulos numerados sobre un filete negro, sin cajas: etiqueta mono, cifra o titular grande y un filete fino. Los pies de figura son texto y las anotaciones abren la pantalla para ver cómo funciona por dentro.</p><p lang="en">Sections are numbered chapters on a black rule, with no boxes: mono label, large figure or headline and a hairline. Figure captions are text and annotations open the screen to show how it works inside.</p></div>
         <div><span class="mono mute">04</span><h4 lang="es">Una sola fuente de verdad</h4><h4 lang="en">A single source of truth</h4><p lang="es">Todo sale de los tokens de <code>:root</code>. Un componente nunca inventa un color, un tamaño ni un radio: los consume.</p><p lang="en">Everything comes from the <code>:root</code> tokens. A component never invents a color, size or radius: it consumes them.</p></div>
@@ -61,6 +61,8 @@
       <p class="big" lang="en">A highlighter on cool off-white, and blue ink to annotate.</p>
       <p class="mt-3" lang="es">Regla del resaltador: se usa <b>una sola vez por proyecto</b>, en la idea que debe recordarse. Marca la frase y el numeral de ese capítulo; en el resto, el numeral va en tinta.</p>
       <p class="mt-3" lang="en">Highlighter rule: it is used <b>only once per project</b>, on the idea to remember. It marks that chapter's phrase and numeral; elsewhere the numeral stays in ink.</p>
+      <p class="mt-3" lang="es">Regla de las portadas: la cabecera de cada caso va en tinta con texto claro y cierra con un filete de resaltador de 3px que la separa de las pestañas.</p>
+      <p class="mt-3" lang="en">Cover rule: each case header is ink with light text and closes with a 3px highlighter rule that separates it from the tabs.</p>
       <span class="mono mute sub" lang="es">Superficie y texto</span><span class="mono mute sub" lang="en">Surface and text</span>
       <div class="swatches" id="sw-base"></div>
       <span class="mono mute sub" lang="es">Acento y semántica</span><span class="mono mute sub" lang="en">Accent and semantics</span>
@@ -121,9 +123,10 @@
       <span class="kt hi"><span lang="es">Hipótesis</span><span lang="en">Hypothesis</span></span>
       <span class="chip fill">Emisión automática</span>
       <span class="chip no">Descartado</span>
+      <span class="badge cs-kind"><span><span lang="es">Caso real</span><span lang="en">Real case</span> · Mercado Libre</span></span>
     </div>
-    <p class="cap mt-3" lang="es">.badge · .kt · .tag · .chip — una familia: mono, 13px, mayúsculas. El color solo significa algo: verde es hecho, azul es observación, ocre es hipótesis.</p>
-    <p class="cap mt-3" lang="en">.badge · .kt · .tag · .chip — one family: mono, 13px, uppercase. Color only ever means something: green is fact, blue is observation, ochre is hypothesis.</p>
+    <p class="cap mt-3" lang="es">.badge · .kt · .tag · .chip — una familia: mono, 13px, mayúsculas. El color solo significa algo: verde es hecho, azul es observación, ocre es hipótesis. La pill .cs-kind dice el tipo de caso y el cliente: clara con filete, como en la portada de cada caso.</p>
+    <p class="cap mt-3" lang="en">.badge · .kt · .tag · .chip — one family: mono, 13px, uppercase. Color only ever means something: green is fact, blue is observation, ochre is hypothesis. The .cs-kind pill gives the case type and client: light with a hairline, as on each case cover.</p>
 
     <span class="mono mute sub" lang="es">Control segmentado</span><span class="mono mute sub" lang="en">Segmented control</span>
     <div class="rc-tabs" id="demo-seg" role="tablist">
@@ -133,6 +136,41 @@
     </div>
     <p class="cap" lang="es">.rc-tabs · .pv-tabs · .pv-seg · .lg-sw · .lang · .tab — el seleccionado siempre se invierte: tinta de fondo, texto claro. En la barra de pestañas de cada caso, el número pasa a resaltador. Pruébalo.</p>
     <p class="cap" lang="en">.rc-tabs · .pv-tabs · .pv-seg · .lg-sw · .lang · .tab — the selected one always inverts: ink fill, light text. In each case's tab bar the number turns highlighter yellow. Try it.</p>
+
+    <span class="mono mute sub" lang="es">Pestañas de página</span><span class="mono mute sub" lang="en">Page tabs</span>
+    <div class="tabs kit-tabs" id="demo-tabs" role="tablist">
+      <button type="button" role="tab" class="tab" aria-selected="true"><span class="n">01</span><span lang="es">Producto</span><span lang="en">Product</span></button>
+      <button type="button" role="tab" class="tab" aria-selected="false" tabindex="-1"><span class="n">02</span><span lang="es">Visual</span><span lang="en">Visual</span></button>
+    </div>
+    <p class="cap mt-3" lang="es">.tabs · .tab — número en mono y la pestaña activa en tinta con el número en resaltador. Centradas sobre un filete fino. Las usan los casos (Producto / Visual) y la portada (Casos de estudio / IA Thinking).</p>
+    <p class="cap mt-3" lang="en">.tabs · .tab — a mono number and the active tab in ink with the number in highlighter. Centered over a hairline. Used by the cases (Product / Visual) and the home page (Case studies / AI Thinking).</p>
+
+    <span class="mono mute sub" lang="es">Selector de opciones · tarjetas-botón</span><span class="mono mute sub" lang="en">Option selector · card buttons</span>
+    <div class="persona-pick kit-pick">
+      <p class="persona-q" id="pq-kit"><span lang="es">Elige un usuario · el contenido cambia</span><span lang="en">Choose a user · the content changes</span></p>
+      <div class="persona-nav" role="tablist" aria-labelledby="pq-kit">
+        <button class="pbtn" role="tab" data-p="kit-a"><span class="dot" aria-hidden="true">V</span><span class="pb-txt"><b>Valentina</b><small lang="es">Activación</small><small lang="en">Activation</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+        <button class="pbtn" role="tab" data-p="kit-b"><span class="dot" aria-hidden="true">M</span><span class="pb-txt"><b>Marcos</b><small lang="es">Mora</small><small lang="en">Delinquency</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+        <button class="pbtn" role="tab" data-p="kit-c"><span class="dot" aria-hidden="true">C</span><span class="pb-txt"><b>Claudia</b><small lang="es">Optimización</small><small lang="en">Optimization</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+      </div>
+    </div>
+    <p class="cap" lang="es">.persona-pick — para elegir qué contenido se ve. Pregunta con punto amarillo, tarjetas con filete de 2px y sombra desplazada, y estado «Viendo» hundido en tinta. Nació de una prueba de usabilidad en la que nadie veía las pestañas de texto. Lo usan Tarjeta de crédito y las capas y especificaciones de Facturación.</p>
+    <p class="cap" lang="en">.persona-pick — to choose which content is shown. A question with a yellow dot, cards with a 2px rule and an offset shadow, and a sunken ink «Viewing» state. It came from a usability test where nobody noticed the text tabs. Used by Credit card and by Billing's layers and specifications.</p>
+
+    <span class="mono mute sub" lang="es">Choice · chips</span><span class="mono mute sub" lang="en">Choice · chips</span>
+    <div class="choice" id="demo-choice" role="group" aria-label="Componente">
+      <button type="button" aria-pressed="true">Deuda</button><button type="button" aria-pressed="false">Mes</button><button type="button" aria-pressed="false">En curso</button>
+    </div>
+    <p class="cap mt-3" lang="es">.choice — opciones dentro de un contenido, por debajo de un selector principal. Píldora con filete y ✓ en la elegida; 40px de alto para el dedo.</p>
+    <p class="cap mt-3" lang="en">.choice — options inside a piece of content, below a main selector. A pill with a hairline and a ✓ on the chosen one; 40px tall for touch.</p>
+
+    <span class="mono mute sub" lang="es">Botón de acción</span><span class="mono mute sub" lang="en">Action button</span>
+    <div class="kit-row">
+      <button type="button" class="to-next-btn"><span lang="es">Continuar con Visual</span><span lang="en">Continue to Visual</span><span class="arr" aria-hidden="true">→</span></button>
+      <a class="cv-btn" href="assets/cv/CV-Juan-David-Torres.pdf" download="CV-Juan-David-Torres.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg><span lang="es">Descargar CV</span><span lang="en">Download CV</span><small>PDF</small></a>
+    </div>
+    <p class="cap mt-3" lang="es">.to-next-btn · .cv-btn — tinta sólida y texto claro, ajustado a su contenido. La flecha avanza al señalar; el de descarga pasa a resaltador. Uno por pantalla: cierra Producto para seguir a Visual y, en la portada, descarga el CV.</p>
+    <p class="cap mt-3" lang="en">.to-next-btn · .cv-btn — solid ink and light text, sized to its content. The arrow moves on hover; the download one turns highlighter. One per screen: it closes Product to move on to Visual and, on the home page, downloads the CV.</p>
 
     <span class="mono mute sub" lang="es">Composición tipográfica · sin caja</span><span class="mono mute sub" lang="en">Typographic composition · no box</span>
     <div class="stats3 mt-3">
@@ -150,6 +188,9 @@
 
     <span class="mono mute sub" lang="es">Aviso de pendiente</span><span class="mono mute sub" lang="en">Pending notice</span>
     <div class="pend"><b class="tg" lang="es">Pendiente</b><b class="tg" lang="en">Pending</b><span lang="es">Lo que aún no tiene dato real se ve, no se esconde ni se inventa.</span><span lang="en">What has no real data yet is shown, not hidden or invented.</span></div>
+    <p class="ia-wip"><span lang="es">En construcción · pronto más proyectos con IA</span><span lang="en">Under construction · more AI projects coming soon</span></p>
+    <p class="cap" lang="es">.pend marca un dato que falta dentro de un contenido; .ia-wip es la versión breve para una sección que todavía crece.</p>
+    <p class="cap" lang="en">.pend marks missing data inside a piece of content; .ia-wip is the short version for a section that is still growing.</p>
 
     <span class="mono mute sub" lang="es">Figura y pie</span><span class="mono mute sub" lang="en">Figure and caption</span>
     <div class="film">
@@ -169,13 +210,29 @@
     <p class="cap mt-3" lang="es">La tinta azul abre la pantalla para informar; el resaltador marca lo que cambió. El número va en un cuadro amarillo, como la numeración de un esquema.</p>
     <p class="cap mt-3" lang="en">Blue ink opens the screen to inform; the highlighter marks what changed. The number sits in a yellow square, like the numbering of a diagram.</p>
 
+    <span class="mono mute sub" lang="es">Portada de caso</span><span class="mono mute sub" lang="en">Case cover</span>
+    <div class="kit-cover">
+      <span class="badge"><span lang="es">Caso real</span><span lang="en">Real case</span></span>
+      <p class="kit-cover-t">Facturación</p>
+      <dl><div><dt lang="es">Estado</dt><dt lang="en">Status</dt><dd lang="es">Entregado en Brasil (Q3/2024)</dd><dd lang="en">Delivered in Brazil (Q3/2024)</dd></div></dl>
+    </div>
+    <p class="cap mt-3" lang="es">.hero en un caso — tinta con texto claro, la pill invertida, el titular con un filete claro de 3px debajo y la ficha técnica con filetes al 35 %. Cierra con el filete de resaltador de 3px. Es igual en los cinco casos; cada caso lo distingue su imagen.</p>
+    <p class="cap mt-3" lang="en">.hero on a case — ink with light text, the inverted pill, the headline with a 3px light rule below and the fact sheet with 35% rules. It closes with the 3px highlighter rule. It is the same on all five cases; each case is told apart by its image.</p>
+
     <span class="mono mute sub" lang="es">Sello de caso</span><span class="mono mute sub" lang="en">Case seal</span>
     <div class="hero-img" style="max-width:360px;margin:var(--s-6) 0 var(--s-2) var(--s-5)">
       <span class="sello" role="img" aria-label="Caso 00"><small><span lang="es">Caso</span><span lang="en">Case</span></small><b>00</b></span>
       <img src="assets/img/fdr/hero.jpg" alt="Imagen de portada de ejemplo con el sello en la esquina">
     </div>
-    <p class="cap mt-3" lang="es">.sello — disco de tinta de <code>--sz-sello</code> con «Caso» y el número. Cuelga de la esquina de la imagen de portada y es lo único fijo: la imagen cambia en cada caso. Idea tomada del sello circular de las portadas de étapes:.</p>
-    <p class="cap mt-3" lang="en">.sello — an ink disc of <code>--sz-sello</code> with “Case” and the number. It hangs from the corner of the cover image and is the only fixed element: the image changes in every case. An idea taken from the circular seal on étapes: covers.</p>
+    <p class="cap mt-3" lang="es">.sello — disco de tinta de <code>--sz-sello</code> con «Caso» y el número. Cuelga de la esquina de la imagen de portada y es lo único fijo: la imagen cambia en cada caso. En la portada de un caso mide 64px y va en resaltador sobre la tinta; en la portada del sitio solo aparece, a 44px, en las miniaturas con la previsualización abierta. Idea tomada del sello circular de las portadas de étapes:.</p>
+    <p class="cap mt-3" lang="en">.sello — an ink disc of <code>--sz-sello</code> with “Case” and the number. It hangs from the corner of the cover image and is the only fixed element: the image changes in every case. On a case cover it is 64px and highlighter on ink; on the site home it only appears, at 44px, on the thumbnails while the preview is open. An idea taken from the circular seal on étapes: covers.</p>
+
+    <span class="mono mute sub" lang="es">Tarjeta de caso</span><span class="mono mute sub" lang="en">Case card</span>
+    <div class="kit-cards">
+      <a class="cover cs cs-03" href="casos/tarjeta-credito.html"><span class="cs-media"><img src="assets/img/cover/tarjeta-page.jpg" alt="" loading="lazy"></span><span class="cs-meta"><span>03 · Fintech · Mobile</span><span lang="es">Concepto</span><span lang="en">Concept</span></span><span class="cs-head"><span class="cs-name"><span lang="es">Tarjeta de crédito</span><span lang="en">Credit card</span></span><span class="cs-arr" aria-hidden="true">→</span></span><span class="cs-tease"><span class="badge cs-kind"><span><span lang="es">Caso conceptual</span><span lang="en">Conceptual case</span> · Mercado Pago</span></span></span></a>
+    </div>
+    <p class="cap mt-3" lang="es">.cover.cs — la página real a escala sobre un panel de tinta, sin marco; debajo, número · categoría y año en mono, el nombre con flecha y la pill de tipo de caso. Al señalar, la captura sube, el nombre se subraya en resaltador y la flecha avanza. En la portada van dos por fila y todas del mismo tamaño.</p>
+    <p class="cap mt-3" lang="en">.cover.cs — the real page at scale on an ink panel, with no frame; below, number · category and year in mono, the name with an arrow and the case-type pill. On hover the screenshot rises, the name gets a highlighter underline and the arrow moves. On the home page they go two per row, all the same size.</p>
 
     <span class="mono mute sub" lang="es">Rejilla y capítulo</span><span class="mono mute sub" lang="en">Grid and chapter</span>
     <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s-2);max-width:760px">
@@ -201,18 +258,21 @@
       <table class="mtab">
         <thead><tr><th lang="es">Componente</th><th lang="en">Component</th><th lang="es">Páginas</th><th lang="en">Pages</th><th lang="es">Unificó</th><th lang="en">Unified</th></tr></thead>
         <tbody>
-          <tr><td>Hero</td><td class="to">6 / 7</td><td><span lang="es">2 variantes en 1; titular de una sola palabra</span><span lang="en">2 variants into 1; one-word headline</span></td></tr>
+          <tr><td>Hero</td><td class="to">6 / 7</td><td><span lang="es">2 variantes en 1; titular de una sola palabra; en los casos, en tinta</span><span lang="en">2 variants into 1; one-word headline; in ink on the cases</span></td></tr>
           <tr><td lang="es">Etiqueta</td><td lang="en">Tag</td><td class="to">6 / 7</td><td><span lang="es">5 clases en 1 familia</span><span lang="en">5 classes into 1 family</span></td></tr>
           <tr><td lang="es">Control segmentado</td><td lang="en">Segmented control</td><td class="to">7 / 7</td><td><span lang="es">7 controles en 1</span><span lang="en">7 controls into 1</span></td></tr>
-          <tr><td lang="es">Composición tipográfica</td><td lang="en">Typographic composition</td><td class="to">6 / 7</td><td><span lang="es">Retira la tarjeta: 14 superficies</span><span lang="en">Retires the card: 14 surfaces</span></td></tr>
-          <tr><td lang="es">Figura y pie</td><td lang="en">Figure and caption</td><td class="to">3 / 7</td><td><span lang="es">Retira el marco con sombra y la barra de título</span><span lang="en">Retires the shadowed frame and the title bar</span></td></tr>
+          <tr><td lang="es">Pestañas de página</td><td lang="en">Page tabs</td><td class="to">5 / 7</td><td><span lang="es">Las de los casos pasan a la portada</span><span lang="en">The case tabs reach the home page</span></td></tr>
+          <tr><td lang="es">Selector de opciones</td><td lang="en">Option selector</td><td class="to">2 / 7</td><td><span lang="es">Nuevo; + Facturación, montado con JS</span><span lang="en">New; + Billing, mounted with JS</span></td></tr>
+          <tr><td lang="es">Botón de acción</td><td lang="en">Action button</td><td class="to">5 / 7</td><td><span lang="es">Nuevo</span><span lang="en">New</span></td></tr>
+          <tr><td lang="es">Composición tipográfica</td><td lang="en">Typographic composition</td><td class="to">5 / 7</td><td><span lang="es">Retira la tarjeta: 14 superficies</span><span lang="en">Retires the card: 14 surfaces</span></td></tr>
+          <tr><td lang="es">Figura y pie</td><td lang="en">Figure and caption</td><td class="to">5 / 7</td><td><span lang="es">Retira el marco con sombra y la barra de título</span><span lang="en">Retires the shadowed frame and the title bar</span></td></tr>
           <tr><td lang="es">Anotación</td><td lang="en">Annotation</td><td class="to">2 / 7</td><td><span lang="es">4 cajas en 1</span><span lang="en">4 boxes into 1</span></td></tr>
-          <tr><td lang="es">Sello de caso</td><td lang="en">Case seal</td><td class="to">5 / 7</td><td><span lang="es">Nuevo</span><span lang="en">New</span></td></tr>
+          <tr><td lang="es">Sello de caso</td><td lang="en">Case seal</td><td class="to">6 / 7</td><td><span lang="es">Nuevo</span><span lang="en">New</span></td></tr>
           <tr><td lang="es">Rejilla de 12 columnas</td><td lang="en">12-column grid</td><td class="to">6 / 7</td><td><span lang="es">Nuevo</span><span lang="en">New</span></td></tr>
         </tbody>
       </table>
-      <p class="cap mt-4" lang="es"><span class="kt ev">Hecho</span>Conteo del 9 de octubre de 2026 sobre el HTML estático de las 7 páginas; los módulos que se montan con JavaScript no se cuentan. Antes de unificar había 26 colores, 38 tamaños de letra y 26 radios distintos; la v2 llegó a 12 colores, 9 tamaños y 4 radios, más los tamaños relativos al contenedor de las anotaciones. La capa editorial añadió tres tokens: <code>--fs-stat</code>, <code>--fs-numeral</code> y <code>--sz-sello</code>.</p>
-      <p class="cap mt-4" lang="en"><span class="kt ev">Fact</span>Counted on 9 October 2026 over the static HTML of the 7 pages; modules mounted with JavaScript are not counted. Before unifying there were 26 colors, 38 font sizes and 26 distinct radii; v2 reached 12 colors, 9 sizes and 4 radii, plus the container-relative sizes of the annotations. The editorial layer added three tokens: <code>--fs-stat</code>, <code>--fs-numeral</code> and <code>--sz-sello</code>.</p>
+      <p class="cap mt-4" lang="es"><span class="kt ev">Hecho</span>Conteo del 9 de octubre de 2026 sobre el HTML estático de las 7 páginas; los módulos que se montan con JavaScript no se cuentan (la tarjeta de caso de la portada, el choice y los selectores de Facturación). Antes de unificar había 26 colores, 38 tamaños de letra y 26 radios distintos; la v2 llegó a 12 colores, 9 tamaños y 4 radios, más los tamaños relativos al contenedor de las anotaciones. La capa editorial añadió tres tokens: <code>--fs-stat</code>, <code>--fs-numeral</code> y <code>--sz-sello</code>.</p>
+      <p class="cap mt-4" lang="en"><span class="kt ev">Fact</span>Counted on 9 October 2026 over the static HTML of the 7 pages; modules mounted with JavaScript are not counted (the home case card, the choice and Billing's selectors). Before unifying there were 26 colors, 38 font sizes and 26 distinct radii; v2 reached 12 colors, 9 sizes and 4 radii, plus the container-relative sizes of the annotations. The editorial layer added three tokens: <code>--fs-stat</code>, <code>--fs-numeral</code> and <code>--sz-sello</code>.</p>
     </div>
   </div>
 
@@ -225,7 +285,7 @@
 </div></footer>
 
 <script src="assets/site.js?v=75"></script>
-<script src="assets/sistema.js?v=34"></script>
+<script src="assets/sistema.js?v=35"></script>
 <script src="assets/editorial.js?v=1"></script>
 </body>
 </html>

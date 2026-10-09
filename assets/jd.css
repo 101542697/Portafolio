@@ -1270,16 +1270,16 @@ body.ed .vf-arch-nav button b,body.ed .vf-docs-list button b{margin:0}
 @media (prefers-reduced-motion:reduce){body.ed .vf-arch-nav button,body.ed .vf-docs-list button,body.ed .vf-arch-nav button::after,body.ed .vf-docs-list button::after{transition:none}}
 
 /* ============================================================
-   Facturación · Visual · selector Deuda / Mes / En curso como «choice» (chips)
+   Choice (chips) · .choice; lo usa el selector Deuda / Mes / En curso de Facturación (#vf-comp-seg)
    Píldoras con borde y ✓ en la opción elegida: subordinado a las tarjetas de capa.
    ============================================================ */
 body.ed .vf-ficha-head{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-3) var(--s-4);margin-bottom:var(--s-4)}
-body.ed #vf-comp-seg{display:flex;flex-wrap:wrap;gap:var(--s-2)}
-body.ed #vf-comp-seg button{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 var(--s-4);border:1.5px solid var(--line-3);border-radius:var(--r-pill);background:var(--bg-0);color:var(--text-1);font:600 var(--fs-small)/1 var(--f-display);letter-spacing:0;text-transform:none;cursor:pointer;transition:border-color var(--dur-1),background var(--dur-1),color var(--dur-1)}
-body.ed #vf-comp-seg button:hover{border-color:var(--text-1);background:var(--bg-2)}
-body.ed #vf-comp-seg button:focus-visible{outline:3px solid var(--hl);outline-offset:2px}
-body.ed #vf-comp-seg button[aria-pressed=true]{border-color:var(--text-1);background:var(--text-1);color:var(--bg-0);cursor:default}
-body.ed #vf-comp-seg button[aria-pressed=true]::before{content:"✓";font-weight:700;color:var(--hl)}
+body.ed #vf-comp-seg,body.ed .choice{display:flex;flex-wrap:wrap;gap:var(--s-2)}
+body.ed #vf-comp-seg button,body.ed .choice button{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 var(--s-4);border:1.5px solid var(--line-3);border-radius:var(--r-pill);background:var(--bg-0);color:var(--text-1);font:600 var(--fs-small)/1 var(--f-display);letter-spacing:0;text-transform:none;cursor:pointer;transition:border-color var(--dur-1),background var(--dur-1),color var(--dur-1)}
+body.ed #vf-comp-seg button:hover,body.ed .choice button:hover{border-color:var(--text-1);background:var(--bg-2)}
+body.ed #vf-comp-seg button:focus-visible,body.ed .choice button:focus-visible{outline:3px solid var(--hl);outline-offset:2px}
+body.ed #vf-comp-seg button[aria-pressed=true],body.ed .choice button[aria-pressed=true]{border-color:var(--text-1);background:var(--text-1);color:var(--bg-0);cursor:default}
+body.ed #vf-comp-seg button[aria-pressed=true]::before,body.ed .choice button[aria-pressed=true]::before{content:"✓";font-weight:700;color:var(--hl)}
 
 /* ============================================================
    PORTADA · casos con imagen protagonista (dirección B de exploracion-portadas.html)
@@ -1363,3 +1363,23 @@ body.ed #vf-comp-seg button[aria-pressed=true]::before{content:"✓";font-weight
 /* IA Thinking · aviso breve de sección en construcción */
 .ia-wip{display:flex;align-items:center;gap:var(--s-2);margin-top:var(--s-5);font:500 var(--fs-label)/1.3 var(--f-mono);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-3)}
 .ia-wip::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--hl);box-shadow:0 0 0 1.5px var(--text-1)}
+
+/* ============================================================
+   UI KIT · contenedores de las demos (solo colocan las piezas reales)
+   ============================================================ */
+.kit-tabs{justify-content:flex-start;border-bottom:1px solid var(--line-1);margin-top:var(--s-3)}
+.kit-pick{max-width:860px;margin:var(--s-3) 0 var(--s-3)}
+.kit-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-4);margin-top:var(--s-3)}
+.kit-row .to-next-btn,.kit-row .cv-btn{margin-top:0}
+.kit-cover{max-width:620px;margin-top:var(--s-3);padding:var(--s-6) var(--s-6) var(--s-5);background:var(--text-1);color:var(--bg-0);border-bottom:3px solid var(--hl);border-radius:var(--r-sm) var(--r-sm) 0 0}
+.kit-cover .badge{background:var(--bg-0);border-color:var(--bg-0);color:var(--text-1)}
+.kit-cover-t{margin-top:var(--s-4);font:700 var(--fs-display-sm)/.95 var(--f-display);letter-spacing:-.04em}
+.kit-cover-t::after{content:"";display:block;margin-top:.3em;height:3px;width:100%;max-width:7em;background:var(--bg-0)}
+.kit-cover dl{margin-top:var(--s-5);border-top:1px solid color-mix(in srgb,currentColor 35%,transparent);padding-top:var(--s-3)}
+.kit-cover dl div{display:flex;gap:var(--s-5)}
+.kit-cover dt{font:500 var(--fs-label)/1.6 var(--f-mono);letter-spacing:var(--ls-label);text-transform:uppercase}
+.kit-cover dd{font-size:var(--fs-card)}
+.kit-cards{max-width:420px;margin-top:var(--s-3)}
+.kit-cards .cover.cs{display:block;transform:none;color:var(--text-1);text-decoration:none}
+/* Selector de tarjetas-botón: en anchos medios la palabra «Viendo» no cabe junto al nombre; el estado ya lo marcan la tinta y el avatar amarillo */
+@media (max-width:1000px){body.ed .persona-pick .pbtn[aria-selected="true"] .pb-now{display:none}}

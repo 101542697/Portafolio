@@ -73,4 +73,15 @@
     var b = e.target.closest('button'); if (!b) return;
     [].forEach.call(seg.children, function (x) { x.setAttribute('aria-selected', x === b); });
   });
+  /* demos de pestañas de página y choice: solo cambian el estado visual */
+  var dt = document.getElementById('demo-tabs');
+  if (dt) dt.addEventListener('click', function (e) {
+    var b = e.target.closest('.tab'); if (!b) return;
+    [].forEach.call(dt.querySelectorAll('.tab'), function (x) { var on = x === b; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; });
+  });
+  var dc = document.getElementById('demo-choice');
+  if (dc) dc.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    [].forEach.call(dc.children, function (x) { x.setAttribute('aria-pressed', x === b); });
+  });
 })();
