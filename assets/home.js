@@ -2,10 +2,10 @@
 (function () {
   var D = window.HOME_DATA;
   var CASES = [
-    { key: 'facturacion', href: 'casos/facturacion.html', name: 'Facturación', num: '01', img: 'facturacion-page', client: 'Mercado Libre', kind: 'real', cat: ['E-commerce · Web + mobile', 'E-commerce · Web + mobile'], y: ['2024', '2024'] },
-    { key: 'facturador', href: 'casos/facturador.html', name: 'Facturador / Emisor de facturas', nameEn: 'Facturador / Invoice issuer', num: '02', img: 'facturador-page', client: 'Mercado Libre', kind: 'real', cat: ['E-commerce · Web', 'E-commerce · Web'], y: ['2025', '2025'] },
-    { key: 'tarjeta', href: 'casos/tarjeta-credito.html', name: 'Tarjeta de crédito', num: '03', img: 'tarjeta-page', client: 'Mercado Pago', kind: 'concepto', cat: ['Fintech · Mobile', 'Fintech · Mobile'], y: ['Concepto', 'Concept'] },
-    { key: 'emocion', href: 'casos/emocion-creativa.html', name: 'Emoción creativa', num: '04', img: 'emocion', client: 'Emoción Creativa', kind: 'real', cat: ['Sitio web', 'Website'], y: ['2020', '2020'] },
+    { key: 'facturacion', href: 'casos/facturacion.html', name: 'Facturación', nameEn: 'Billing', num: '01', img: 'facturacion-page', client: 'Mercado Libre', kind: 'real', cat: ['E-commerce · Web + mobile', 'E-commerce · Web + mobile'], y: ['2024', '2024'] },
+    { key: 'facturador', href: 'casos/facturador.html', name: 'Facturador / Emisor de facturas', nameEn: 'Facturador / Invoice creator', num: '02', img: 'facturador-page', client: 'Mercado Libre', kind: 'real', cat: ['E-commerce · Web', 'E-commerce · Web'], y: ['2025', '2025'] },
+    { key: 'tarjeta', href: 'casos/tarjeta-credito.html', name: 'Tarjeta de crédito', nameEn: 'Credit Card', num: '03', img: 'tarjeta-page', client: 'Mercado Pago', kind: 'concepto', cat: ['Fintech · Mobile', 'Fintech · Mobile'], y: ['Concepto', 'Concept'] },
+    { key: 'emocion', href: 'casos/emocion-creativa.html', name: 'Emoción creativa', nameEn: 'Creative Emotion', num: '04', img: 'emocion', client: 'Emoción Creativa', kind: 'real', cat: ['Sitio web', 'Website'], y: ['2020', '2020'] },
     { key: 'sp', href: 'casos/sp-pro.html', name: 'SP-PRO', num: '05', img: 'sp', client: 'SP-PRO', kind: 'real', cat: ['E-commerce · Web', 'E-commerce · Web'], y: ['2020', '2020'] }
   ];
   var EASE = 'cubic-bezier(.2,.7,.2,1)', DUR = 720, STAGGER = 50;
@@ -86,7 +86,7 @@
   }
   function render(i) {
     var c = CASES[i], d = D[c.key], tabbed = !!(d.A && d.B); cur = i; stopPv();
-    document.getElementById('pv-no').textContent = c.num; document.getElementById('pv-title').textContent = c.name; document.getElementById('pv-open').href = c.href;
+    document.getElementById('pv-no').textContent = c.num; document.getElementById('pv-title').innerHTML = c.nameEn ? '<span lang="es">' + esc(c.name) + '</span><span lang="en">' + esc(c.nameEn) + '</span>' : esc(c.name); document.getElementById('pv-open').href = c.href;
     var labels = tabbed ? [['Producto', 'Product'], ['Visual', 'Visual']] : [['Proyecto', 'Project']];
     body.innerHTML = '<div class="pv-stage"><div class="pstage"><a class="hit" href="' + c.href + '" aria-label="' + esc(c.name) + '"></a></div><div class="pv-track">' +
       labels.map(function (l) { return '<button type="button"><span>' + l[L()] + '</span><i><b></b></i></button>'; }).join('') + '</div></div>';
