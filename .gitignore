@@ -1,0 +1,30 @@
+# Sistema
+.DS_Store
+
+# Exploraciones locales (no se publican)
+exploracion-portadas.html
+
+# Exportaciones de Figma sin usar (material interno; ninguna página las carga)
+assets/img/fact/figma-archivo/
+assets/img/fact/figma-originals/
+
+# Código y estilos de versiones anteriores, sin referencias
+assets/cassette.js
+assets/cassette-rich.js
+assets/site.css
+assets/ds-map.json
+
+# Imágenes sin referencias en ninguna página ni script
+assets/img/fact/actual.png
+assets/img/fact/ad/estado-*.jpg
+assets/img/fact/es/
+assets/img/land/emocion-creativa.webp
+assets/img/land/sp-pro-1.webp
+assets/img/land/sp-pro-2.webp
+assets/img/tc/ds/fit-actions.png
+assets/img/tc/ds/fit-badge.png
+assets/img/tc/ds/fit-money.png
+assets/img/tc/ds/fit-textlink.png
+assets/img/cover/facturacion.jpg
+assets/img/cover/facturador.jpg
+assets/img/cover/tarjeta.jpg

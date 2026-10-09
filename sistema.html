@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>JD·DS · El sistema detrás del portafolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@300..800&family=Radio+Canada+Big:wght@400..700&family=Radio+Canada:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/jd.css?v=200">
+</head>
+<body class="ed">
+
+<header class="topbar"><div class="wrap">
+  <div class="crumbs">
+    <a class="back" href="index.html">← <span lang="es">Casos de estudio</span><span lang="en">Case studies</span></a>
+    <span class="here" aria-current="page">Sistema</span>
+  </div>
+  <div class="lang" role="group" aria-label="Idioma / Language"><button data-set="es">ES</button><button data-set="en">EN</button></div>
+</div></header>
+
+<!-- ============ HERO ============ -->
+<section class="hero"><div class="wrap">
+  <div class="eyebrow">
+    <span class="badge acid"><span lang="es">Sistema</span><span lang="en">System</span></span>
+    <span class="mono">JD·DS · v2</span>
+  </div>
+  <h1>Sistema</h1>
+  <dl class="meta">
+    <div><dt lang="es">Nombre</dt><dt lang="en">Name</dt><dd>JD·DS</dd></div>
+    <div><dt lang="es">Base</dt><dt lang="en">Base</dt><dd lang="es">Hueso frío con ruido fino de papel</dd><dd lang="en">Cool off-white with a fine paper grain</dd></div>
+    <div><dt lang="es">Tipografía</dt><dt lang="en">Type</dt><dd>Radio Canada Big · Radio Canada · Atkinson Mono</dd></div>
+    <div><dt lang="es">Origen</dt><dt lang="en">Origin</dt><dd lang="es">Una lámina de programa educativo</dd><dd lang="en">A plate from an educational show</dd></div>
+    <div><dt lang="es">Referencia</dt><dt lang="en">Reference</dt><dd lang="es">étapes:, revista francesa de design gráfico</dd><dd lang="en">étapes:, French graphic design magazine</dd></div>
+  </dl>
+</div></section>
+
+<main class="wrap">
+
+  <!-- 01 PRINCIPIOS -->
+  <div class="sec key">
+    <h2><b>01</b><span lang="es">Principios</span><span lang="en">Principles</span></h2>
+    <div>
+      <p class="big" lang="es">Cuatro ideas que el sistema <mark>no negocia</mark>.</p>
+      <p class="big" lang="en">Four ideas the system <mark>never trades away</mark>.</p>
+      <div class="docs mt-5">
+        <div><span class="mono mute">01</span><h4 lang="es">Claro, con grano de papel</h4><h4 lang="en">Light, with a paper grain</h4><p lang="es">El fondo es un hueso frío con un ruido fino, como papel impreso. Las pantallas de interfaz blanca se separan con un borde de 1px, sin marco ni sombra y sin fondo oscuro.</p><p lang="en">The background is a cool off-white with a fine grain, like printed paper. White interface screens separate with a 1px border, with no frame, no shadow and no dark background.</p></div>
+        <div><span class="mono mute">02</span><h4 lang="es">Letras que se leen desde lejos</h4><h4 lang="en">Letters you can read from afar</h4><p lang="es">Títulos y texto de una misma familia pensada para pantalla, con aperturas abiertas y seguimiento positivo de +0,012em. Nada por debajo de 13px.</p><p lang="en">Titles and text from one family made for screens, with open apertures and positive tracking of +0.012em. Nothing below 13px.</p></div>
+        <div><span class="mono mute">03</span><h4 lang="es">La jerarquía la hace la letra</h4><h4 lang="en">Type makes the hierarchy</h4><p lang="es">Las secciones son capítulos numerados sobre un filete negro, sin cajas: etiqueta mono, cifra o titular grande y un filete fino. Los pies de figura son texto y las anotaciones abren la pantalla para ver cómo funciona por dentro.</p><p lang="en">Sections are numbered chapters on a black rule, with no boxes: mono label, large figure or headline and a hairline. Figure captions are text and annotations open the screen to show how it works inside.</p></div>
+        <div><span class="mono mute">04</span><h4 lang="es">Una sola fuente de verdad</h4><h4 lang="en">A single source of truth</h4><p lang="es">Todo sale de los tokens de <code>:root</code>. Un componente nunca inventa un color, un tamaño ni un radio: los consume.</p><p lang="en">Everything comes from the <code>:root</code> tokens. A component never invents a color, size or radius: it consumes them.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 COLOR -->
+  <div class="sec">
+    <h2><b>02</b><span lang="es">Color</span><span lang="en">Color</span></h2>
+    <div>
+      <p class="big" lang="es">Un resaltador sobre hueso frío, y tinta azul para anotar.</p>
+      <p class="big" lang="en">A highlighter on cool off-white, and blue ink to annotate.</p>
+      <p class="mt-3" lang="es">Regla del resaltador: se usa <b>una sola vez por proyecto</b>, en la idea que debe recordarse. Marca la frase y el numeral de ese capítulo; en el resto, el numeral va en tinta.</p>
+      <p class="mt-3" lang="en">Highlighter rule: it is used <b>only once per project</b>, on the idea to remember. It marks that chapter's phrase and numeral; elsewhere the numeral stays in ink.</p>
+      <span class="mono mute sub" lang="es">Superficie y texto</span><span class="mono mute sub" lang="en">Surface and text</span>
+      <div class="swatches" id="sw-base"></div>
+      <span class="mono mute sub" lang="es">Acento y semántica</span><span class="mono mute sub" lang="en">Accent and semantics</span>
+      <div class="swatches" id="sw-accent"></div>
+      <span class="mono mute sub" lang="es">Contraste medido, en vivo</span><span class="mono mute sub" lang="en">Measured contrast, live</span>
+      <table class="mtab" id="contrast">
+        <thead><tr><th lang="es">Texto</th><th lang="en">Text</th><th>bg-0</th><th>bg-1</th><th>bg-2</th><th>bg-3</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="cap mt-4" lang="es">Se calcula en esta página con la fórmula WCAG a partir de los tokens. AA exige 4,5:1 en texto normal; el texto terciario no se usa sobre bg-3.</p>
+      <p class="cap mt-4" lang="en">Computed on this page with the WCAG formula from the tokens. AA requires 4.5:1 for normal text; tertiary text is not used on bg-3.</p>
+    </div>
+  </div>
+
+  <!-- 03 TIPOGRAFÍA -->
+  <div class="sec">
+    <h2><b>03</b><span lang="es">Tipografía</span><span lang="en">Typography</span></h2>
+    <div>
+      <p class="big" lang="es">Tres voces: una que titula, una que explica y una que mide.</p>
+      <p class="big" lang="en">Three voices: one that titles, one that explains and one that measures.</p>
+      <div class="docs mt-5">
+        <div><span class="mono mute" lang="es">Títulos</span><span class="mono mute" lang="en">Titles</span><p style="font-family:var(--f-display);font-weight:700;font-size:var(--fs-big);line-height:1.1;margin:var(--s-2) 0;color:var(--text-1)">Radio Canada Big</p><p lang="es">Humanista, de ritmo propio y letras abiertas. Se eligió frente a ocho alternativas sans serif, la más cercana a la que referenciaste.</p><p lang="en">Humanist, with its own rhythm and open letters. Chosen over eight sans-serif alternatives, the closest to the one you referenced.</p></div>
+        <div><span class="mono mute" lang="es">Texto</span><span class="mono mute" lang="en">Text</span><p style="font-family:var(--f-text);font-weight:500;font-size:var(--fs-big);line-height:1.1;margin:var(--s-2) 0;color:var(--text-1)">Radio Canada</p><p lang="es">La hermana de los títulos, hecha para leer. Un solo origen tipográfico: el ritmo de los títulos y el del cuerpo coinciden.</p><p lang="en">The titles' sibling, made for reading. A single typographic origin: the rhythm of titles and body match.</p></div>
+        <div><span class="mono mute" lang="es">Datos y etiquetas</span><span class="mono mute" lang="en">Data and labels</span><p style="font-family:var(--f-mono);font-weight:500;font-size:var(--fs-big);line-height:1.1;margin:var(--s-2) 0;color:var(--text-1)">Hyperlegible Mono</p><p lang="es">Diseñada para que 0 y O, 1 e l no se confundan. Siempre en mayúsculas y con +0,06em para etiquetas y cifras.</p><p lang="en">Designed so 0 and O, 1 and l are never confused. Always uppercase with +0.06em for labels and figures.</p></div>
+      </div>
+      <span class="mono mute sub" lang="es">Escala · once pasos, leída de los tokens</span><span class="mono mute sub" lang="en">Scale · eleven steps, read from the tokens</span>
+      <div class="type" id="type-scale"></div>
+    </div>
+  </div>
+
+  <!-- 04 ESPACIO, FORMA, MOVIMIENTO -->
+  <div class="sec">
+    <h2><b>04</b><span lang="es">Espacio, forma y movimiento</span><span lang="en">Space, shape and motion</span></h2>
+    <div>
+      <p class="big" lang="es">Una base de 4 píxeles, cuatro radios y dos tiempos.</p>
+      <p class="big" lang="en">A 4-pixel base, four radii and two durations.</p>
+      <span class="mono mute sub" lang="es">Espacio</span><span class="mono mute sub" lang="en">Space</span>
+      <div class="bars" id="space-scale"></div>
+      <span class="mono mute sub" lang="es">Radios</span><span class="mono mute sub" lang="en">Radii</span>
+      <div class="rads" id="radii"></div>
+      <span class="mono mute sub" lang="es">Movimiento y ruido</span><span class="mono mute sub" lang="en">Motion and grain</span>
+      <p class="note" lang="es">0,15 s para cambios de estado en controles y 0,3 s para aparecer y moverse. Todo se detiene con «reducir movimiento». El grano de papel es un solo token, <code>--grain-opacity</code>, y está fijo en 0,07.</p>
+      <p class="note" lang="en">0.15 s for state changes in controls and 0.3 s for appearing and moving. Everything stops under "reduce motion". The paper grain is a single token, <code>--grain-opacity</code>, fixed at 0.07.</p>
+    </div>
+  </div>
+
+  <!-- 05 COMPONENTES -->
+  <div class="sec full" id="componentes">
+    <h2><b>05</b><span lang="es">Componentes</span><span lang="en">Components</span></h2>
+    <p class="big" lang="es">Cada pieza existe una sola vez y se reutiliza en los casos.</p>
+    <p class="big" lang="en">Each piece exists only once and is reused across the cases.</p>
+
+    <span class="mono mute sub" lang="es">Etiqueta</span><span class="mono mute sub" lang="en">Tag</span>
+    <div class="chips">
+      <span class="badge acid"><span lang="es">Caso real</span><span lang="en">Real case</span></span>
+      <span class="kt ev"><span lang="es">Hecho</span><span lang="en">Fact</span></span>
+      <span class="kt ob"><span lang="es">Observación</span><span lang="en">Observation</span></span>
+      <span class="kt hi"><span lang="es">Hipótesis</span><span lang="en">Hypothesis</span></span>
+      <span class="chip fill">Emisión automática</span>
+      <span class="chip no">Descartado</span>
+    </div>
+    <p class="cap mt-3" lang="es">.badge · .kt · .tag · .chip — una familia: mono, 13px, mayúsculas. El color solo significa algo: verde es hecho, azul es observación, ocre es hipótesis.</p>
+    <p class="cap mt-3" lang="en">.badge · .kt · .tag · .chip — one family: mono, 13px, uppercase. Color only ever means something: green is fact, blue is observation, ochre is hypothesis.</p>
+
+    <span class="mono mute sub" lang="es">Control segmentado</span><span class="mono mute sub" lang="en">Segmented control</span>
+    <div class="rc-tabs" id="demo-seg" role="tablist">
+      <button type="button" role="tab" aria-selected="true">Vencido</button>
+      <button type="button" role="tab" aria-selected="false">Por vencer</button>
+      <button type="button" role="tab" aria-selected="false">Al día</button>
+    </div>
+    <p class="cap" lang="es">.rc-tabs · .pv-tabs · .pv-seg · .lg-sw · .lang · .tab — el seleccionado siempre se invierte: tinta de fondo, texto claro. En la barra de pestañas de cada caso, el número pasa a resaltador. Pruébalo.</p>
+    <p class="cap" lang="en">.rc-tabs · .pv-tabs · .pv-seg · .lg-sw · .lang · .tab — the selected one always inverts: ink fill, light text. In each case's tab bar the number turns highlighter yellow. Try it.</p>
+
+    <span class="mono mute sub" lang="es">Composición tipográfica · sin caja</span><span class="mono mute sub" lang="en">Typographic composition · no box</span>
+    <div class="stats3 mt-3">
+      <div class="ed-item"><span class="mono mute" lang="es">Alcance</span><span class="mono mute" lang="en">Scope</span><p class="ed-big"><span lang="es">5 sites</span><span lang="en">5 sites</span></p></div>
+      <div class="ed-item"><span class="mono mute" lang="es">Primer lanzamiento</span><span class="mono mute" lang="en">First launch</span><p class="ed-big">Argentina</p></div>
+      <div class="ed-item"><span class="mono mute" lang="es">Medición</span><span class="mono mute" lang="en">Measurement</span><p class="ed-big"><span lang="es">4 métricas</span><span lang="en">4 metrics</span></p></div>
+    </div>
+    <div class="ed-flow mt-5">
+      <div><span class="mono" lang="es">Paso uno</span><span class="mono" lang="en">Step one</span><p class="ed-q" lang="es">¿Qué requiere atención?</p><p class="ed-q" lang="en">What needs attention?</p></div>
+      <div class="ed-arrow" aria-hidden="true">↓</div>
+      <div><span class="mono" lang="es">Paso dos</span><span class="mono" lang="en">Step two</span><p class="ed-q" lang="es">¿Qué hago con cada venta?</p><p class="ed-q" lang="en">What do I do with each sale?</p></div>
+    </div>
+    <p class="cap mt-3" lang="es">.ed-item · .ed-big · .ed-flow — la jerarquía la hace la letra: etiqueta mono, cifra de <code>--fs-stat</code> y un filete de 1px. Sin fondo, sin borde de caja, sin sombra. Retira la tarjeta (.card) y las 14 superficies que unificó.</p>
+    <p class="cap mt-3" lang="en">.ed-item · .ed-big · .ed-flow — type makes the hierarchy: mono label, a <code>--fs-stat</code> figure and a 1px rule. No fill, no box border, no shadow. It retires the card (.card) and the 14 surfaces it had unified.</p>
+
+    <span class="mono mute sub" lang="es">Aviso de pendiente</span><span class="mono mute sub" lang="en">Pending notice</span>
+    <div class="pend"><b class="tg" lang="es">Pendiente</b><b class="tg" lang="en">Pending</b><span lang="es">Lo que aún no tiene dato real se ve, no se esconde ni se inventa.</span><span lang="en">What has no real data yet is shown, not hidden or invented.</span></div>
+
+    <span class="mono mute sub" lang="es">Figura y pie</span><span class="mono mute sub" lang="en">Figure and caption</span>
+    <div class="film">
+      <figure class="shot"><img src="assets/img/fdr/antes.jpg" alt="Pantalla de ejemplo con un borde de 1px"><figcaption lang="es">La imagen se separa del papel con un borde de 1px</figcaption><figcaption lang="en">The image separates from the paper with a 1px border</figcaption></figure>
+      <div>
+        <p class="note" lang="es">La figura (.shot) ya no lleva marco ni sombra: la separa un borde de 1px. Su pie es texto corrido y numera cada figura sola (Fig. 1, Fig. 2…). Clic para ampliar.</p>
+        <p class="note" lang="en">The figure (.shot) no longer has a frame or a shadow: a 1px border separates it. Its caption is running text and numbers each figure by itself (Fig. 1, Fig. 2…). Click to enlarge.</p>
+      </div>
+    </div>
+
+    <span class="mono mute sub" lang="es">Anotación · vista interior</span><span class="mono mute sub" lang="en">Annotation · inside view</span>
+    <div class="ad-stage" style="max-width:520px;aspect-ratio:1366/768;container-type:inline-size">
+      <img src="assets/img/fdr/despues.jpg" alt="Pantalla con anotaciones de ejemplo">
+      <div class="ad-box" style="left:8.3%;top:38.5%;width:87.5%;height:61.5%"><i>1</i></div>
+      <div class="ad-box on" style="left:8%;top:19.8%;width:47%;height:6%"><i>2</i></div>
+    </div>
+    <p class="cap mt-3" lang="es">La tinta azul abre la pantalla para informar; el resaltador marca lo que cambió. El número va en un cuadro amarillo, como la numeración de un esquema.</p>
+    <p class="cap mt-3" lang="en">Blue ink opens the screen to inform; the highlighter marks what changed. The number sits in a yellow square, like the numbering of a diagram.</p>
+
+    <span class="mono mute sub" lang="es">Sello de caso</span><span class="mono mute sub" lang="en">Case seal</span>
+    <div class="hero-img" style="max-width:360px;margin:var(--s-6) 0 var(--s-2) var(--s-5)">
+      <span class="sello" role="img" aria-label="Caso 00"><small><span lang="es">Caso</span><span lang="en">Case</span></small><b>00</b></span>
+      <img src="assets/img/fdr/hero.jpg" alt="Imagen de portada de ejemplo con el sello en la esquina">
+    </div>
+    <p class="cap mt-3" lang="es">.sello — disco de tinta de <code>--sz-sello</code> con «Caso» y el número. Cuelga de la esquina de la imagen de portada y es lo único fijo: la imagen cambia en cada caso. Idea tomada del sello circular de las portadas de étapes:.</p>
+    <p class="cap mt-3" lang="en">.sello — an ink disc of <code>--sz-sello</code> with “Case” and the number. It hangs from the corner of the cover image and is the only fixed element: the image changes in every case. An idea taken from the circular seal on étapes: covers.</p>
+
+    <span class="mono mute sub" lang="es">Rejilla y capítulo</span><span class="mono mute sub" lang="en">Grid and chapter</span>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s-2);max-width:760px">
+      <span style="grid-column:1 / 4;background:var(--bg-3);padding:var(--s-2) var(--s-3);font:500 var(--fs-label)/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:var(--ls-label)"><span lang="es">Rótulo · 1–3</span><span lang="en">Label · 1–3</span></span>
+      <span style="grid-column:4 / 13;background:rgba(255,216,74,.45);padding:var(--s-2) var(--s-3);font:500 var(--fs-label)/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:var(--ls-label)"><span lang="es">Contenido · 4–12 (texto a 62 caracteres como máximo)</span><span lang="en">Content · 4–12 (text capped at 62 characters)</span></span>
+    </div>
+    <p class="cap mt-3" lang="es">Doce columnas. Cada capítulo va sobre un filete negro de 2px, con el número en Radio Canada Big subrayado de resaltador y sin rótulo «Cap.». En móvil (≤860px) pasa a una sola columna. En cualquier caso, la tecla <kbd>G</kbd> dibuja la rejilla encima. Referencia: «una nueva rejilla modulable para las direcciones de arte venideras», rediseño de étapes: (Cylindre, 2012).</p>
+    <p class="cap mt-3" lang="en">Twelve columns. Each chapter sits on a 2px black rule, with the number in Radio Canada Big underlined in highlighter and no “Cap.” label. On mobile (≤860px) it collapses to one column. On any case, the <kbd>G</kbd> key draws the grid on top. Reference: “a new modular grid for future art directions”, the étapes: redesign (Cylindre, 2012).</p>
+
+    <span class="mono mute sub" lang="es">Línea de tiempo</span><span class="mono mute sub" lang="en">Timeline</span>
+    <ol class="tl">
+      <li><b lang="es">Capítulo uno</b><b lang="en">Chapter one</b><span lang="es">Cada ronda es una escena con fecha.</span><span lang="en">Each round is a dated scene.</span></li>
+      <li><b lang="es">Capítulo dos</b><b lang="en">Chapter two</b><span lang="es">El punto marca el momento; el hilo, el orden.</span><span lang="en">The dot marks the moment; the thread, the order.</span></li>
+    </ol>
+  </div>
+
+  <!-- 06 DÓNDE SE USA -->
+  <div class="sec">
+    <h2><b>06</b><span lang="es">Dónde se usa</span><span lang="en">Where it is used</span></h2>
+    <div>
+      <p class="big" lang="es">Si un componente existe, se usa en todas partes.</p>
+      <p class="big" lang="en">If a component exists, it is used everywhere.</p>
+      <table class="mtab">
+        <thead><tr><th lang="es">Componente</th><th lang="en">Component</th><th lang="es">Páginas</th><th lang="en">Pages</th><th lang="es">Unificó</th><th lang="en">Unified</th></tr></thead>
+        <tbody>
+          <tr><td>Hero</td><td class="to">6 / 7</td><td><span lang="es">2 variantes en 1; titular de una sola palabra</span><span lang="en">2 variants into 1; one-word headline</span></td></tr>
+          <tr><td lang="es">Etiqueta</td><td lang="en">Tag</td><td class="to">6 / 7</td><td><span lang="es">5 clases en 1 familia</span><span lang="en">5 classes into 1 family</span></td></tr>
+          <tr><td lang="es">Control segmentado</td><td lang="en">Segmented control</td><td class="to">7 / 7</td><td><span lang="es">7 controles en 1</span><span lang="en">7 controls into 1</span></td></tr>
+          <tr><td lang="es">Composición tipográfica</td><td lang="en">Typographic composition</td><td class="to">6 / 7</td><td><span lang="es">Retira la tarjeta: 14 superficies</span><span lang="en">Retires the card: 14 surfaces</span></td></tr>
+          <tr><td lang="es">Figura y pie</td><td lang="en">Figure and caption</td><td class="to">3 / 7</td><td><span lang="es">Retira el marco con sombra y la barra de título</span><span lang="en">Retires the shadowed frame and the title bar</span></td></tr>
+          <tr><td lang="es">Anotación</td><td lang="en">Annotation</td><td class="to">2 / 7</td><td><span lang="es">4 cajas en 1</span><span lang="en">4 boxes into 1</span></td></tr>
+          <tr><td lang="es">Sello de caso</td><td lang="en">Case seal</td><td class="to">5 / 7</td><td><span lang="es">Nuevo</span><span lang="en">New</span></td></tr>
+          <tr><td lang="es">Rejilla de 12 columnas</td><td lang="en">12-column grid</td><td class="to">6 / 7</td><td><span lang="es">Nuevo</span><span lang="en">New</span></td></tr>
+        </tbody>
+      </table>
+      <p class="cap mt-4" lang="es"><span class="kt ev">Hecho</span>Conteo del 9 de octubre de 2026 sobre el HTML estático de las 7 páginas; los módulos que se montan con JavaScript no se cuentan. Antes de unificar había 26 colores, 38 tamaños de letra y 26 radios distintos; la v2 llegó a 12 colores, 9 tamaños y 4 radios, más los tamaños relativos al contenedor de las anotaciones. La capa editorial añadió tres tokens: <code>--fs-stat</code>, <code>--fs-numeral</code> y <code>--sz-sello</code>.</p>
+      <p class="cap mt-4" lang="en"><span class="kt ev">Fact</span>Counted on 9 October 2026 over the static HTML of the 7 pages; modules mounted with JavaScript are not counted. Before unifying there were 26 colors, 38 font sizes and 26 distinct radii; v2 reached 12 colors, 9 sizes and 4 radii, plus the container-relative sizes of the annotations. The editorial layer added three tokens: <code>--fs-stat</code>, <code>--fs-numeral</code> and <code>--sz-sello</code>.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot"><div class="wrap">
+  <span class="sf-name">Juan David Torres</span>
+  <span class="sf-role"><span lang="es">Diseñador UX/UI · Bogotá, Colombia</span><span lang="en">UX/UI Designer · Bogotá, Colombia</span></span>
+  <span class="ed-grid-hint" role="button" tabindex="0"><span lang="es">Rejilla: tecla <kbd>G</kbd></span><span lang="en">Grid: key <kbd>G</kbd></span></span>
+</div></footer>
+
+<script src="assets/site.js?v=75"></script>
+<script src="assets/sistema.js?v=34"></script>
+<script src="assets/editorial.js?v=1"></script>
+</body>
+</html>

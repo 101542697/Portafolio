@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Tarjeta de crédito · Caso conceptual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@300..800&family=Radio+Canada+Big:wght@400..700&family=Radio+Canada:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/jd.css?v=200">
+</head>
+<body class="ed" data-case="03">
+
+<header class="topbar"><div class="wrap">
+  <div class="crumbs">
+    <a class="back" href="../index.html">← <span lang="es">Casos de estudio</span><span lang="en">Case studies</span></a>
+    <span class="here" aria-current="page">Tarjeta de crédito</span>
+  </div>
+  <div class="lang" role="group" aria-label="Idioma / Language"><button data-set="es">ES</button><button data-set="en">EN</button></div>
+</div></header>
+
+<!-- ============ HERO ============ -->
+<section class="hero hero--compact"><div class="wrap">
+  <div class="hero-grid">
+    <div class="hero-text">
+  <div class="eyebrow">
+    <span class="badge acid"><span lang="es">Caso conceptual</span><span lang="en">Conceptual case</span></span>
+  </div>
+  <h1>Tarjeta de crédito</h1>
+    </div>
+    <div class="hero-img" data-bug="Caso 03" data-bug-en="Case 03"><span class="sello" role="img" aria-label="Caso 03"><small><span lang="es">Caso</span><span lang="en">Case</span></small><b>03</b></span><img src="../assets/img/tc/tres-estados.png" alt="Tres estados del dashboard de tarjeta de crédito"></div>
+  </div>
+
+  <dl class="meta">
+    <div><dt lang="es">Alcance</dt><dt lang="en">Scope</dt><dd lang="es">Dashboard de TC y su sistema de estados adaptativos</dd><dd lang="en">Credit-card dashboard and its adaptive-state system</dd></div>
+    <div><dt lang="es">Foco</dt><dt lang="en">Focus</dt><dd lang="es">Activación · Mora · Optimización</dd><dd lang="en">Activation · Delinquency · Optimization</dd></div>
+    <div><dt lang="es">Naturaleza</dt><dt lang="en">Nature</dt><dd lang="es">Ejercicio de diseño. Métricas propuestas, sin resultados de producción.</dd><dd lang="en">Design exercise. Proposed metrics, no production results.</dd></div>
+  </dl>
+</div></section>
+
+<!-- ============ PESTAÑAS ============ -->
+<div class="tabs-bar"><div class="wrap">
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-tab="producto"><span class="n">01</span><span lang="es">Producto</span><span lang="en">Product</span></button>
+    <button class="tab" role="tab" data-tab="visual"><span class="n">02</span><span lang="es">Visual</span><span lang="en">Visual</span></button>
+  </div>
+</div></div>
+
+<!-- ============================================================
+     PESTAÑA 01 · PRODUCTO
+     ============================================================ -->
+<main class="wrap">
+<section class="panel" id="producto">
+
+  <div class="sec key">
+    <h2><b>01</b><span lang="es">El pedido</span><span lang="en">The brief</span></h2>
+    <div>
+      <p class="big" lang="es">A partir del dashboard de tarjeta de crédito y su sistema de estados adaptativos, diseñar <mark>cómo debe verse y comunicarse</mark> para tres situaciones de usuario distintas.</p>
+      <p class="big" lang="en">Starting from the credit-card dashboard and its adaptive-state system, design <mark>how it should look and speak</mark> for three different user situations.</p>
+      <p class="mute mt-5" lang="es">Restricción fija: el lugar impactado es siempre el dashboard de TC. Cada caso parte de datos a consultar, un insight, supuestos explícitos y varias hipótesis con su riesgo de negocio, y termina en una sola decisión argumentada.</p>
+      <p class="mute mt-5" lang="en">Fixed constraint: the surface is always the credit-card dashboard. Each case starts from data to check, an insight, explicit assumptions and several hypotheses with their business risk, and ends in one argued decision.</p>
+    </div>
+  </div>
+
+  <div class="persona-pick mt-7">
+    <p class="persona-q" id="pq-producto"><span lang="es">Elige un usuario · el caso cambia según su situación</span><span lang="en">Choose a user · the case changes with their situation</span></p>
+    <div class="persona-nav" role="tablist" aria-labelledby="pq-producto">
+      <button class="pbtn" role="tab" data-p="valentina"><span class="dot" aria-hidden="true">V</span><span class="pb-txt"><b>Valentina</b><small lang="es">Activación</small><small lang="en">Activation</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+      <button class="pbtn" role="tab" data-p="marcos"><span class="dot" aria-hidden="true">M</span><span class="pb-txt"><b>Marcos</b><small lang="es">Mora</small><small lang="en">Delinquency</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+      <button class="pbtn" role="tab" data-p="claudia"><span class="dot" aria-hidden="true">C</span><span class="pb-txt"><b>Claudia</b><small lang="es">Optimización</small><small lang="en">Optimization</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+    </div>
+  </div>
+
+  <!-- ---------- VALENTINA ---------- -->
+  <div class="pcase" data-p="valentina">
+    <div class="sec">
+      <h2><b>02</b><span lang="es">Problema</span><span lang="en">Problem</span></h2>
+      <div>
+        <h3 lang="es">Activan la tarjeta, pero no hacen la primera compra.</h3>
+        <h3 lang="en">They activate the card, but never make a first purchase.</h3>
+        <p lang="es">Los usuarios como Valentina, que activan la tarjeta, no compran en el corto plazo. Eso reduce la adopción y la generación de ingresos.</p>
+        <p lang="en">Users like Valentina activate the card but don't buy soon after. That lowers adoption and revenue.</p>
+        <p class="mute mt-4 note" lang="es"><b>Datos a consultar:</b> % que entra al dashboard en los primeros 7 días post-activación · ventana en que ocurre el problema · % de usuarios en este estado · activan vs. compran.</p>
+        <p class="mute mt-4 note" lang="en"><b>Data to check:</b> % who open the dashboard within 7 days of activation · the time window of the problem · % of users in this state · activate vs. purchase.</p>
+      </div>
+    </div>
+    <div class="sec">
+      <h2><b>03</b>Insight</h2>
+      <p class="pull" lang="es">Tiene capacidad para usarla, pero no claridad sobre cómo ni una razón concreta para actuar. El freno no es falta de valor: es falta de certeza y dirección.</p>
+      <p class="pull" lang="en">They can use the card, but have no clarity on how, nor a concrete reason to act. The blocker isn't lack of value: it's lack of certainty and direction.</p>
+    </div>
+    <div class="sec">
+      <h2><b>04</b><span lang="es">Objetivos</span><span lang="en">Goals</span></h2>
+      <div class="two">
+        <div class="card"><span class="mono" lang="es">Negocio</span><span class="mono" lang="en">Business</span>
+          <p lang="es">Aumentar la conversión de la primera compra en la primera semana post-activación.</p>
+          <p lang="en">Raise first-purchase conversion in the first week after activation.</p></div>
+        <div class="card"><span class="mono">UX</span>
+          <p lang="es">Que el usuario toque el CTA de primera compra y complete al menos una transacción en la sesión.</p>
+          <p lang="en">The user taps the first-purchase CTA and completes at least one transaction in the session.</p></div>
+      </div>
+      <div class="assume"><span class="mono" lang="es">Supuestos</span><span class="mono" lang="en">Assumptions</span><ul class="list">
+        <li><b>S1</b><span lang="es">Una primera compra pequeña y exitosa genera hábito.</span><span lang="en">A small, successful first purchase builds habit.</span></li>
+        <li><b>S2</b><span lang="es">Tiene intención de comprar, pero no le hemos dicho cuándo.</span><span lang="en">They intend to buy, but we haven't told them when.</span></li>
+        <li><b>S3</b><span lang="es">El freno es la incertidumbre sobre el primer paso, no la falta de intención.</span><span lang="en">The blocker is uncertainty about the first step, not lack of intent.</span></li>
+      </ul></div>
+    </div>
+    <div class="sec">
+      <h2><b>05</b><span lang="es">Hipótesis</span><span lang="en">Hypotheses</span></h2>
+      <div class="hyps">
+        <div class="hyp"><span class="num">H1</span><div>
+          <h4 lang="es">Confianza: reducir el riesgo percibido</h4><h4 lang="en">Trust: reduce perceived risk</h4>
+          <p lang="es">Mensajes de seguridad, simulación de uso y confirmaciones claras disminuyen el miedo a «hacerlo mal».</p>
+          <p lang="en">Security messages, usage simulation and clear confirmations lower the fear of "doing it wrong".</p>
+          <p class="risk"><b lang="es">Riesgo</b><b lang="en">Risk</b><span lang="es">Más complejidad puede sumar fricción y bajar la conversión.</span><span lang="en">More complexity can add friction and lower conversion.</span></p></div></div>
+        <div class="hyp"><span class="num">H2</span><div>
+          <h4 lang="es">Timing: incentivar en el momento de mayor intención</h4><h4 lang="en">Timing: nudge at peak intent</h4>
+          <p lang="es">Mensaje o incentivo justo después de la activación o durante la primera semana. Es más un problema de canal que de interfaz.</p>
+          <p lang="en">A message or incentive right after activation or during week one. More a channel problem than an interface one.</p>
+          <p class="risk"><b lang="es">Riesgo</b><b lang="en">Risk</b><span lang="es">Saturar el momento inicial y afectar la activación.</span><span lang="en">Overloading the first moment and hurting activation.</span></p></div></div>
+        <div class="hyp sel"><span class="num">H3</span><div>
+          <h4><span lang="es">Reducir la fricción decisional</span><span lang="en">Reduce decision friction</span><span class="tag" lang="es">Seleccionada</span><span class="tag" lang="en">Selected</span></h4>
+          <p lang="es">Proponer un caso de uso específico reduce el espacio de decisión y elimina la ambigüedad de cuándo y para qué usar la tarjeta.</p>
+          <p lang="en">Proposing one specific use case narrows the decision space and removes the ambiguity of when and what to use the card for.</p>
+          <p class="risk"><b lang="es">Riesgo</b><b lang="en">Risk</b><span lang="es">Asociar la tarjeta a un único uso y limitar el volumen futuro.</span><span lang="en">Tying the card to a single use and capping future volume.</span></p></div></div>
+      </div>
+    </div>
+    <div class="sec">
+      <h2><b>06</b><span lang="es">Decisión</span><span lang="en">Decision</span></h2>
+      <div>
+        <h3 lang="es">El primer caso de uso es Mercado Libre.</h3><h3 lang="en">The first use case is Mercado Libre.</h3>
+        <p lang="es">El CTA «Comprar» lleva a las últimas cuatro publicaciones agregadas a favoritos: menos incertidumbre y una decisión acotada. El ecommerce del ecosistema suma valor (descuentos, cuotas sin interés, cashback), impulsa la adopción y beneficia a las dos unidades de negocio.</p>
+        <p lang="en">The "Buy" CTA leads to the last four items added to favorites: less uncertainty and a narrower decision. The ecosystem's ecommerce adds value (discounts, interest-free installments, cashback), drives adoption and benefits both business units.</p>
+        <p class="mute note" lang="es"><b>Riesgos asumidos:</b> que lo último que guardó no sea lo que quiere comprar ahora · que la redirección se sienta invasiva. La comunicación fuera del dashboard (el momento del journey) debe acompañar el diseño.</p>
+        <p class="mute note" lang="en"><b>Accepted risks:</b> the latest saved items may not be what they want to buy now · the redirect may feel intrusive. Communication outside the dashboard (the journey moment) must support the design.</p>
+      </div>
+    </div>
+    <div class="sec">
+      <h2><b>07</b><span lang="es">Medición</span><span lang="en">Measurement</span></h2>
+      <div>
+        <div class="metrics">
+          <div class="metric"><span class="mono" lang="es">Éxito</span><span class="mono" lang="en">Success</span><span lang="es">% que completa una compra en ≤ 7 días</span><span lang="en">% completing a purchase in ≤ 7 days</span></div>
+          <div class="metric"><span class="mono" lang="es">Interacción</span><span class="mono" lang="en">Engagement</span><span lang="es">% que interactúa con el caso de uso / CTA</span><span lang="en">% interacting with the use case / CTA</span></div>
+          <div class="metric"><span class="mono">Velocity</span><span lang="es">Tiempo promedio a la primera compra</span><span lang="en">Average time to first purchase</span></div>
+          <div class="metric"><span class="mono">Guardrail</span><span lang="es">% de compras fuera del flujo del dashboard</span><span lang="en">% of purchases outside the dashboard flow</span></div>
+        </div>
+        <div class="window"><b lang="es">Ventana</b><b lang="en">Window</b><span lang="es">1 mes desde salida a producción</span><span lang="en">1 month from production release</span></div>
+      </div>
+    </div>
+    <div class="closing" lang="es">Valentina no necesita que le digan que la tarjeta es segura. Necesita que alguien le diga <em>«empieza por acá»</em>.</div>
+    <div class="closing" lang="en">Valentina doesn't need to be told the card is safe. She needs someone to say <em>"start here"</em>.</div>
+  </div>
+
+  <!-- ---------- MARCOS ---------- -->
+  <div class="pcase" data-p="marcos">
+    <div class="sec">
+      <h2><b>02</b><span lang="es">Problema</span><span lang="en">Problem</span></h2>
+      <div>
+        <h3 lang="es">Cerca del límite y del vencimiento, no pagan a tiempo.</h3>
+        <h3 lang="en">Near the limit and the due date, they don't pay on time.</h3>
+        <p lang="es">Los usuarios como Marcos no ejecutan acciones de pago a tiempo, y eso incrementa la tasa de mora.</p>
+        <p lang="en">Users like Marcos don't act on payment in time, which pushes delinquency up.</p>
+        <p class="mute mt-4 note" lang="es"><b>Datos a consultar:</b> % en mora en el segmento · pago mínimo vs. total vs. no paga · días promedio de atraso · % de usuarios con el cupo al límite.</p>
+        <p class="mute mt-4 note" lang="en"><b>Data to check:</b> % delinquent in the segment · minimum vs. full vs. no payment · average days late · % of users at their credit limit.</p>
+      </div>
+    </div>
+    <div class="sec">
+      <h2><b>03</b>Insight</h2>
+      <p class="pull" lang="es">No necesita más información, necesita claridad accionable. La incertidumbre sobre su deuda genera ansiedad, y la ansiedad lo lleva a evitar la app o a decidir de forma reactiva.</p>
+      <p class="pull" lang="en">They don't need more information, they need actionable clarity. Uncertainty about their debt breeds anxiety, and anxiety leads them to avoid the app or decide reactively.</p>
+    </div>
+    <div class="sec">
+      <h2><b>04</b><span lang="es">Objetivos</span><span lang="en">Goals</span></h2>
+      <div class="two">
+        <div class="card"><span class="mono" lang="es">Negocio</span><span class="mono" lang="en">Business</span>
+          <p lang="es">Reducir la mora y aumentar el pago a tiempo en usuarios con alto uso de crédito.</p>
+          <p lang="en">Reduce delinquency and increase on-time payment among heavy credit users.</p></div>
+        <div class="card"><span class="mono">UX</span>
+          <p lang="es">Que el usuario seleccione una acción de pago antes de la fecha de vencimiento.</p>
+          <p lang="en">The user picks a payment action before the due date.</p></div>
+      </div>
+      <div class="assume"><span class="mono" lang="es">Supuestos</span><span class="mono" lang="en">Assumptions</span><ul class="list">
+        <li><b>S1</b><span lang="es">No paga porque no entiende su situación, no porque no pueda.</span><span lang="en">They don't pay because they don't understand their situation, not because they can't.</span></li>
+        <li><b>S2</b><span lang="es">No sabe qué acción concreta tomar, no es que no quiera.</span><span lang="en">They don't know what concrete action to take, not that they don't want to.</span></li>
+        <li><b>S3</b><span lang="es">Puede no abrir el dashboard en el momento crítico, lo que limita cualquier mejora de interfaz.</span><span lang="en">They may not open the dashboard at the critical moment, which limits any interface fix.</span></li>
+        <li><b>S4</b><span lang="es">Si entiende las consecuencias concretas de no pagar, actúa.</span><span lang="en">If they grasp the concrete consequences of not paying, they act.</span></li>
+      </ul></div>
+    </div>
+    <div class="sec">
+      <h2><b>05</b><span lang="es">Hipótesis</span><span lang="en">Hypotheses</span></h2>
+      <div class="hyps">
+        <div class="hyp sel"><span class="num">H1</span><div>
+          <h4><span lang="es">Claridad (control)</span><span lang="en">Clarity (control)</span><span class="tag" lang="es">Seleccionada</span><span class="tag" lang="en">Selected</span></h4>
+          <p lang="es">Mostrar cuánto debe, cuándo vence y qué pasa si no paga reduce la incertidumbre que bloquea la acción.</p>
+          <p lang="en">Showing how much is owed, when it's due and what happens if unpaid removes the uncertainty that blocks action.</p>
+          <p class="risk"><b lang="es">Riesgo</b><b lang="en">Risk</b><span lang="es">Sobrecargar con datos financieros puede aumentar la ansiedad y la evitación.</span><span lang="en">Overloading with financial data can raise anxiety and avoidance.</span></p></div></div>
+        <div class="hyp"><span class="num">H2</span><div>
+          <h4 lang="es">Acción guiada</h4><h4 lang="en">Guided action</h4>
+          <p lang="es">Ofrecer «pago mínimo» y «pago total» como acciones claras. Complementa a H1.</p>
+          <p lang="en">Offer "minimum payment" and "full payment" as clear actions. Complements H1.</p>
+          <p class="risk"><b lang="es">Riesgo</b><b lang="en">Risk</b><span lang="es">Incentivar el mínimo puede afectar ingresos por intereses y hábitos de pago.</span><span lang="en">Encouraging the minimum can affect interest revenue and payment habits.</span></p></div></div>
+        <div class="hyp"><span class="num">H3</span><div>
+          <h4 lang="es">Anticipación (timing)</h4><h4 lang="en">Anticipation (timing)</h4>
+          <p lang="es">Mostrar la información en días previos al vencimiento o al superar cierto % de uso.</p>
+          <p lang="en">Surface the information in the days before the due date or past a usage threshold.</p>
+          <p class="risk"><b lang="es">Riesgo</b><b lang="en">Risk</b><span lang="es">Exceso de alertas: fatiga y notificaciones desactivadas.</span><span lang="en">Too many alerts: fatigue and disabled notifications.</span></p></div></div>
+        <div class="hyp"><span class="num">H4</span><div>
+          <h4 lang="es">Evitación / capacidad: sin intervención en el dashboard</h4><h4 lang="en">Avoidance / capacity: no dashboard intervention</h4>
+          <p lang="es">Si el bloqueo es capacidad económica real, el usuario no pagará sin importar cómo se presente la información.</p>
+          <p lang="en">If the blocker is real financial capacity, the user won't pay no matter how the information is presented.</p>
+          <p class="risk"><b lang="es">Riesgo</b><b lang="en">Risk</b><span lang="es">Invertir en UX sin reducir la mora.</span><span lang="en">Investing in UX without reducing delinquency.</span></p></div></div>
+      </div>
+    </div>
+    <div class="sec">
+      <h2><b>06</b><span lang="es">Medición</span><span lang="en">Measurement</span></h2>
+      <div>
+        <div class="metrics">
+          <div class="metric"><span class="mono" lang="es">Interacción</span><span class="mono" lang="en">Engagement</span><span lang="es">% que interactúa con opciones de pago</span><span lang="en">% interacting with payment options</span></div>
+          <div class="metric"><span class="mono" lang="es">Conducta</span><span class="mono" lang="en">Behavior</span><span lang="es">% que paga mínimo / total</span><span lang="en">% paying minimum / full</span></div>
+          <div class="metric"><span class="mono" lang="es">Éxito</span><span class="mono" lang="en">Success</span><span lang="es">↓ usuarios que entran en mora · ↑ pago a tiempo</span><span lang="en">↓ users entering delinquency · ↑ on-time payment</span></div>
+          <div class="metric"><span class="mono">Guardrail</span><span lang="es">↓ abandono del dashboard sin interacción</span><span lang="en">↓ dashboard exits without interaction</span></div>
+        </div>
+        <div class="window"><b lang="es">Ventana</b><b lang="en">Window</b><span lang="es">30 días desde salida a producción</span><span lang="en">30 days from production release</span></div>
+      </div>
+    </div>
+    <div class="closing" lang="es">Marcos no necesita que le recuerden cuánto debe. Necesita que el sistema le diga <em>«paga esto ahora»</em>.</div>
+    <div class="closing" lang="en">Marcos doesn't need a reminder of what he owes. He needs the system to say <em>"pay this now"</em>.</div>
+  </div>
+
+  <!-- ---------- CLAUDIA ---------- -->
+  <div class="pcase" data-p="claudia">
+    <div class="sec">
+      <h2><b>02</b><span lang="es">Contexto</span><span lang="en">Context</span></h2>
+      <div>
+        <h3 lang="es">Alto uso, paga a tiempo, aprovecha beneficios.</h3>
+        <h3 lang="en">Heavy usage, pays on time, uses benefits.</h3>
+        <p lang="es">No hay un problema evidente: para Claudia el dashboard es una herramienta de control y optimización. Se deduce que los usuarios avanzados necesitan eficiencia y control sin fricción. Es probablemente el segmento más valioso para el negocio.</p>
+        <p lang="en">There is no obvious problem: for Claudia the dashboard is a control and optimization tool. The deduction is that advanced users need efficiency and frictionless control. It is likely the most valuable segment for the business.</p>
+        <p class="mute mt-4 note" lang="es"><b>Datos a consultar:</b> frecuencia de uso · % de uso de beneficios · beneficios aplicados por mes.</p>
+        <p class="mute mt-4 note" lang="en"><b>Data to check:</b> usage frequency · % benefit usage · benefits applied per month.</p>
+      </div>
+    </div>
+    <div class="sec">
+      <h2><b>03</b>Insight</h2>
+      <p class="pull" lang="es">Para el usuario avanzado el dashboard no informa ni educa: es una interfaz de control operativo. El valor está en ejecutar y optimizar rápido. No quiere guía, ni educación, ni simplificación excesiva.</p>
+      <p class="pull" lang="en">For the advanced user the dashboard doesn't inform or teach: it's an operational control surface. The value is in executing and optimizing fast. No guidance, no education, no over-simplification.</p>
+    </div>
+    <div class="sec">
+      <h2><b>04</b><span lang="es">Objetivos</span><span lang="en">Goals</span></h2>
+      <div class="two">
+        <div class="card"><span class="mono" lang="es">Negocio</span><span class="mono" lang="en">Business</span>
+          <p lang="es">Aumentar el volumen transaccional y el uso eficiente de beneficios en usuarios de alto valor.</p>
+          <p lang="en">Grow transaction volume and efficient benefit usage among high-value users.</p></div>
+        <div class="card"><span class="mono">UX</span>
+          <p lang="es">Que identifique y aplique beneficios relevantes al transaccionar. Acción observable: toca «Explorar beneficios» o elige uno aplicable.</p>
+          <p lang="en">They identify and apply relevant benefits when transacting. Observable action: tap "Explore benefits" or pick an applicable one.</p></div>
+      </div>
+      <div class="assume"><span class="mono" lang="es">Supuestos</span><span class="mono" lang="en">Assumptions</span><ul class="list">
+        <li><b>S1</b><span lang="es">La frecuencia de uso la limita el tiempo que tarda en encontrar lo que necesita.</span><span lang="en">Usage frequency is capped by the time it takes to find what they need.</span></li>
+        <li><b>S2</b><span lang="es">Aplica beneficios cuando el valor es concreto y visible en el momento de la transacción.</span><span lang="en">They apply benefits when the value is concrete and visible at the moment of transaction.</span></li>
+        <li><b>S3</b><span lang="es">Entra al dashboard según su sensación de control financiero, no por consultar datos básicos.</span><span lang="en">They open the dashboard for a sense of financial control, not to look up basic data.</span></li>
+      </ul></div>
+    </div>
+    <div class="sec">
+      <h2><b>05</b><span lang="es">Hipótesis</span><span lang="en">Hypotheses</span></h2>
+      <div class="hyps">
+        <div class="hyp"><span class="num">H1</span><div>
+          <h4 lang="es">Eficiencia operativa</h4><h4 lang="en">Operational efficiency</h4>
+          <p lang="es">Reducir el tiempo para llegar a la información clave aumenta la frecuencia de gestión.</p>
+          <p lang="en">Cutting the time to reach key information increases how often they manage the card.</p>
+          <p class="risk"><b lang="es">Riesgo</b><b lang="en">Risk</b><span lang="es">Optimización marginal, sin impacto en ingresos.</span><span lang="en">Marginal optimization with no revenue impact.</span></p></div></div>
+        <div class="hyp sel"><span class="num">H2</span><div>
+          <h4><span lang="es">Optimización de beneficios</span><span lang="en">Benefit optimization</span><span class="tag" lang="es">Seleccionada</span><span class="tag" lang="en">Selected</span></h4>
+          <p lang="es">Beneficios visibles, entendibles y accionables en el momento de uso acortan la distancia cognitiva entre la decisión de compra y el beneficio disponible.</p>
+          <p lang="en">Benefits that are visible, understandable and actionable at the moment of use shorten the cognitive distance between the purchase decision and the available benefit.</p>
+          <p class="risk"><b lang="es">Riesgo</b><b lang="en">Risk</b><span lang="es">La sobreexposición de beneficios puede afectar costos.</span><span lang="en">Over-exposing benefits can raise costs.</span></p></div></div>
+        <div class="hyp"><span class="num">H3</span><div>
+          <h4 lang="es">Control avanzado</h4><h4 lang="en">Advanced control</h4>
+          <p lang="es">Herramientas como categorización de gastos y proyección de cupo aumentan la frecuencia de revisión.</p>
+          <p lang="en">Tools like spend categorization and limit projection increase how often they check in.</p>
+          <p class="risk"><b lang="es">Riesgo</b><b lang="en">Risk</b><span lang="es">Complejidad innecesaria para la mayoría.</span><span lang="en">Needless complexity for most users.</span></p></div></div>
+      </div>
+    </div>
+    <div class="sec">
+      <h2><b>06</b><span lang="es">Medición</span><span lang="en">Measurement</span></h2>
+      <div>
+        <div class="metrics">
+          <div class="metric"><span class="mono" lang="es">Éxito</span><span class="mono" lang="en">Success</span><span lang="es">↑ volumen transaccional · ↑ valor promedio por transacción</span><span lang="en">↑ transaction volume · ↑ average value per transaction</span></div>
+          <div class="metric"><span class="mono" lang="es">Beneficios</span><span class="mono" lang="en">Benefits</span><span lang="es">% de transacciones con beneficio aplicado</span><span lang="en">% of transactions with a benefit applied</span></div>
+          <div class="metric"><span class="mono" lang="es">Interacción</span><span class="mono" lang="en">Engagement</span><span lang="es">% que interactúa con el detalle</span><span lang="en">% interacting with the detail view</span></div>
+        </div>
+        <div class="window"><b lang="es">Ventana</b><b lang="en">Window</b><span lang="es">90 días desde salida a producción</span><span lang="en">90 days from production release</span></div>
+        <p class="mute mt-5 note" lang="es"><b>Nota estratégica:</b> no diseñar primero para este segmento, sino usarlo para responder qué hacen estos usuarios que los demás no.</p>
+        <p class="mute mt-5 note" lang="en"><b>Strategic note:</b> don't design for this segment first; use it to learn what these users do that the others don't.</p>
+      </div>
+    </div>
+    <div class="closing" lang="es">Claudia no necesita aprender a usar la tarjeta. Necesita que la tarjeta <em>se adapte a cómo ella la usa</em>.</div>
+    <div class="closing" lang="en">Claudia doesn't need to learn how to use the card. She needs the card to <em>adapt to how she uses it</em>.</div>
+  </div>
+
+
+  <div class="to-next">
+    <button class="to-next-btn" type="button" data-goto="visual"><span lang="es">Continuar con Visual</span><span lang="en">Continue to Visual</span><span class="arr" aria-hidden="true">→</span></button>
+  </div>
+</section>
+
+<!-- ============================================================
+     PESTAÑA 02 · VISUAL
+     ============================================================ -->
+<section class="panel" id="visual">
+
+  <div class="sec">
+    <h2><b>01</b><span lang="es">Tres estados, un sistema</span><span lang="en">Three states, one system</span></h2>
+    <div>
+      <p class="big" lang="es">Los mismos módulos, reordenados por intención: cambia lo que va primero, lo que se silencia y cuál es el único botón que importa.</p>
+      <p class="big" lang="en">The same modules, reordered by intent: what comes first, what gets muted, and the one button that matters all change.</p>
+      <div class="shot"><img src="../assets/img/tc/tres-estados.png" alt="Valentina, Marcos y Claudia: tres estados del dashboard"></div>
+      <p class="cap" lang="es">Valentina (activación) · Marcos (mora) · Claudia (optimización)</p>
+      <p class="cap" lang="en">Valentina (activation) · Marcos (delinquency) · Claudia (optimization)</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><b>02</b><span lang="es">Qué se mueve</span><span lang="en">What moves</span></h2>
+    <div class="row3">
+      <div class="principle"><b>01 · CTA</b>
+        <h4 lang="es">Una acción primaria por estado</h4><h4 lang="en">One primary action per state</h4>
+        <p lang="es">«Comprar», «Pagar monto mínimo» y «Explorar beneficios». El botón principal cambia; el resto queda como acción secundaria.</p>
+        <p lang="en">"Buy", "Pay minimum" and "Explore benefits". The primary button changes; everything else drops to secondary.</p></div>
+      <div class="principle"><b>02 · Estado</b>
+        <h4 lang="es">Una pill dice cómo estás</h4><h4 lang="en">A pill says where you stand</h4>
+        <p lang="es">«Activa», «Por vencer» y «Al día» reemplazan datos que en ese momento no comunican nada, como un $0 en el límite consumido.</p>
+        <p lang="en">"Active", "Due soon" and "Up to date" replace data that says nothing at that moment, like a $0 consumed limit.</p></div>
+      <div class="principle"><b>03 · Jerarquía</b>
+        <h4 lang="es">La tarjeta baja de nivel</h4><h4 lang="en">The card drops a level</h4>
+        <p lang="es">La tarjeta virtual pasa de protagonista a segundo plano en Valentina y a tercer plano en Marcos y Claudia, según qué decisión toca hoy.</p>
+        <p lang="en">The virtual card goes from protagonist to second tier for Valentina, and to third tier for Marcos and Claudia, depending on the decision at hand.</p></div>
+    </div>
+  </div>
+
+  <div class="persona-pick mt-7">
+    <p class="persona-q" id="pq-visual"><span lang="es">Elige un usuario · cambia la propuesta visual</span><span lang="en">Choose a user · the visual proposal changes</span></p>
+    <div class="persona-nav" role="tablist" aria-labelledby="pq-visual">
+      <button class="pbtn" role="tab" data-p="valentina"><span class="dot" aria-hidden="true">V</span><span class="pb-txt"><b>Valentina</b><small lang="es">Activación</small><small lang="en">Activation</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+      <button class="pbtn" role="tab" data-p="marcos"><span class="dot" aria-hidden="true">M</span><span class="pb-txt"><b>Marcos</b><small lang="es">Mora</small><small lang="en">Delinquency</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+      <button class="pbtn" role="tab" data-p="claudia"><span class="dot" aria-hidden="true">C</span><span class="pb-txt"><b>Claudia</b><small lang="es">Optimización</small><small lang="en">Optimization</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+    </div>
+  </div>
+
+  <!-- VISUAL · VALENTINA -->
+  <div class="pcase" data-p="valentina">
+    <div class="sec">
+      <h2><b>03</b><span lang="es">Antes y después</span><span lang="en">Before &amp; after</span></h2>
+      <div>
+        <div class="shot"><img src="../assets/img/tc/valentina-antes-despues.jpg" alt="Valentina: antes y propuesta con anotaciones"></div>
+      </div>
+    </div>
+    <div class="sec">
+      <h2><b>04</b>Fold</h2>
+      <div><div class="shot"><img src="../assets/img/tc/valentina-fold.jpg" alt="Valentina: lo que se ve sin hacer scroll"></div>
+      <p class="cap" lang="es">Lo que se ve sin hacer scroll · a la derecha, con las acciones de la tarjeta</p><p class="cap" lang="en">What's visible without scrolling · right, with card actions</p></div>
+    </div>
+  </div>
+
+  <!-- VISUAL · MARCOS -->
+  <div class="pcase" data-p="marcos">
+    <div class="sec">
+      <h2><b>03</b><span lang="es">Antes y después</span><span lang="en">Before &amp; after</span></h2>
+      <div>
+        <div class="shot"><img src="../assets/img/tc/marcos-antes-despues.jpg" alt="Marcos: antes y propuesta con anotaciones"></div>
+      </div>
+    </div>
+    <div class="sec">
+      <h2><b>04</b>Fold</h2>
+      <div><div class="shot"><img src="../assets/img/tc/marcos-fold.jpg" alt="Marcos: lo que se ve sin hacer scroll"></div>
+      <p class="cap" lang="es">El pago se decide sin hacer scroll</p><p class="cap" lang="en">The payment is decided without scrolling</p></div>
+    </div>
+  </div>
+
+  <!-- VISUAL · CLAUDIA -->
+  <div class="pcase" data-p="claudia">
+    <div class="sec">
+      <h2><b>03</b><span lang="es">Antes y después</span><span lang="en">Before &amp; after</span></h2>
+      <div>
+        <div class="shot"><img src="../assets/img/tc/claudia-antes-despues.jpg" alt="Claudia: antes y propuesta con anotaciones"></div>
+      </div>
+    </div>
+    <div class="sec">
+      <h2><b>04</b>Fold</h2>
+      <div><div class="shot"><img src="../assets/img/tc/claudia-fold.jpg" alt="Claudia: lo que se ve sin hacer scroll"></div>
+      <p class="cap" lang="es">Los beneficios aparecen antes que la tarjeta</p><p class="cap" lang="en">Benefits appear before the card</p></div>
+    </div>
+  </div>
+
+  <!-- ============ SISTEMA DE DISEÑO EN USO ============ -->
+  <div class="sec full" id="sistema">
+    <h2><b>05</b><span lang="es">Sistema de diseño en uso</span><span lang="en">Design system in use</span></h2>
+    <p class="big" lang="es">Todo sobre Andes, ajustado a lo que el producto necesitaba.</p>
+    <p class="big" lang="en">Everything built on Andes, tuned to what the product needed.</p>
+
+    <div class="stats">
+      <div class="stat"><b>990</b><span lang="es">instancias de componente en el archivo</span><span lang="en">component instances in the file</span></div>
+      <div class="stat"><b>0</b><span lang="es">componentes locales ni instancias desconectadas</span><span lang="en">local components or detached instances</span></div>
+      <div class="stat"><b>2</b><span lang="es">generaciones del sistema: Andes Legacy y Andes X</span><span lang="en">system generations: Andes Legacy and Andes X</span></div>
+      <div class="stat"><b>0</b><span lang="es">variables o estilos propios: todo viene de librería</span><span lang="en">custom variables or styles: everything comes from libraries</span></div>
+    </div>
+
+    <div class="ds-sub"><span lang="es">A · Mapa de componentes sobre la pantalla real</span><span lang="en">A · Component map on the real screen</span></div>
+    <div class="persona-pick">
+      <p class="persona-q" id="pq-ds"><span lang="es">Elige un usuario · cambian la pantalla y sus componentes</span><span lang="en">Choose a user · the screen and its components change</span></p>
+      <div class="persona-nav" id="ds-map" data-base="../assets/img/tc/ds/" role="tablist" aria-labelledby="pq-ds">
+        <button class="pbtn" role="tab" data-screen="valentina"><span class="dot" aria-hidden="true">V</span><span class="pb-txt"><b>Valentina</b><small lang="es">Activación</small><small lang="en">Activation</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+        <button class="pbtn" role="tab" data-screen="marcos"><span class="dot" aria-hidden="true">M</span><span class="pb-txt"><b>Marcos</b><small lang="es">Mora</small><small lang="en">Delinquency</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+        <button class="pbtn" role="tab" data-screen="claudia"><span class="dot" aria-hidden="true">C</span><span class="pb-txt"><b>Claudia</b><small lang="es">Optimización</small><small lang="en">Optimization</small></span><span class="pb-go" aria-hidden="true"><span class="pb-now"><span lang="es">Viendo</span><span lang="en">Viewing</span></span><span class="pb-arr">→</span></span></button>
+      </div>
+    </div>
+    <div class="ds-map" id="ds-map-body">
+      <div class="ds-phone"></div>
+      <div class="ds-legend"></div>
+    </div>
+    <p class="cap" lang="es">Pasa el cursor sobre una caja o una fila para ubicarla · cada número es un componente de librería</p>
+    <p class="cap" lang="en">Hover a box or a row to locate it · each number is a library component</p>
+
+    <div class="ds-sub"><span lang="es">B · Tokens: de la decisión semántica al valor</span><span lang="en">B · Tokens: from semantic decision to value</span></div>
+    <div class="chain-head"><span lang="es">Token semántico</span><span lang="en">Semantic token</span><span></span><span lang="es">Primitivo</span><span lang="en">Primitive</span><span></span><span lang="es">Valor</span><span lang="en">Value</span></div>
+    <div class="chain"><div class="chain-row"><div class="tk">spacing/padding/micro</div><div class="ar">→</div><div class="tk prim">ax-dimensions/12</div><div class="ar">→</div><div class="tk val">12 px<span style="display:inline-block;height:10px;width:12px;background:#d6ff3f;border-radius:2px"></span></div></div><div class="chain-row"><div class="tk">border/radius/actions-inputs/default</div><div class="ar">→</div><div class="tk prim">ax-dimensions/12</div><div class="ar">→</div><div class="tk val">12 px<span style="display:inline-block;width:22px;height:22px;border:2px solid #d6ff3f;border-radius:12px 0 0 0;border-right:0;border-bottom:0"></span></div></div><div class="chain-row"><div class="tk">color/text/primary</div><div class="ar">→</div><div class="tk prim">ax-color/gray/900</div><div class="ar">→</div><div class="tk val"><span class="sw" style="background:#282834"></span>#282834</div></div><div class="chain-row"><div class="tk">color/feedback/fill/positive-quiet</div><div class="ar">→</div><div class="tk prim">ax-color/green/100</div><div class="ar">→</div><div class="tk val"><span class="sw" style="background:#DEFADE"></span>#DEFADE</div></div><div class="chain-row"><div class="tk">text/heading/size/huge</div><div class="ar">→</div><div class="tk prim">ax-font/size/24</div><div class="ar">→</div><div class="tk val">24 / 28 px</div></div><div class="chain-row"><div class="tk">badge/border/radius/default</div><div class="ar">→</div><div class="tk prim">border/radius/full</div><div class="ar">→</div><div class="tk val">9999 · pill</div></div></div>
+
+  </div>
+
+</section>
+</main>
+
+<footer class="site-foot"><div class="wrap">
+  <span class="sf-name">Juan David Torres</span>
+  <span class="sf-role"><span lang="es">Diseñador UX/UI · Bogotá, Colombia</span><span lang="en">UX/UI Designer · Bogotá, Colombia</span></span>
+  <span class="ed-grid-hint" role="button" tabindex="0"><span lang="es">Rejilla: tecla <kbd>G</kbd></span><span lang="en">Grid: key <kbd>G</kbd></span></span>
+</div></footer>
+
+<script src="../assets/site.js?v=75"></script>
+<script src="../assets/ds-map.js?v=20"></script>
+<script src="../assets/ds.js?v=23"></script>
+<script src="../assets/editorial.js?v=1"></script>
+</body>
+</html>
