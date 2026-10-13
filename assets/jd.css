@@ -1329,9 +1329,7 @@ body.ed #vf-comp-seg button[aria-pressed=true]::before,body.ed .choice button[ar
 /* PORTADA · botón para descargar el CV: mismo aspecto que «Continuar con Visual» (tinta sólida, texto claro) */
 .cv-btn{display:inline-flex;align-items:center;justify-self:start;width:fit-content;gap:var(--s-2);margin-top:var(--s-5);padding:var(--s-3) var(--s-5);background:var(--text-1);color:var(--bg-0);text-decoration:none;font:600 var(--fs-card)/1 var(--f-display);transition:background var(--dur-1),color var(--dur-1)}
 .cv-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--dur-1)}
-.cv-btn small{margin-left:var(--s-2);font:500 var(--fs-label)/1 var(--f-mono);letter-spacing:var(--ls-label);text-transform:uppercase;color:rgba(244,245,242,.6)}
 .cv-btn:hover,.cv-btn:focus-visible{background:var(--hl);color:var(--on-hl)}
-.cv-btn:hover small,.cv-btn:focus-visible small{color:rgba(27,24,20,.65)}
 .cv-btn:hover svg,.cv-btn:focus-visible svg{transform:translateY(2px)}
 .cv-btn:focus-visible{outline:3px solid var(--text-1);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){.cv-btn,.cv-btn svg{transition:none}.cv-btn:hover svg{transform:none}}
