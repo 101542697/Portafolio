@@ -70,7 +70,7 @@
   /* — cifras del sistema: se cuentan leyendo jd.css, así no se desactualizan — */
   var cssLink = document.querySelector('link[href*="jd.css"]');
   if (cssLink && window.fetch) fetch(cssLink.href).then(function (r) { return r.text(); }).then(function (css) {
-    var cut = css.indexOf('/* ============ 2 · BASE'), root = css.slice(0, cut), rest = css.slice(cut);
+    var a = css.indexOf(':root{'), cut = css.indexOf('}', a) + 1, root = css.slice(a, cut), rest = css.slice(0, a) + css.slice(cut); /* tokens = el bloque :root */
     var defs = root.match(/--[\w-]+:[^;]+/g) || [];
     function count(test) { return defs.filter(test).length; }
     var n = {
