@@ -22,7 +22,7 @@
     var a = document.createElement('a'); a.className = 'cover cs cs-' + c.num; a.href = c.href; a.setAttribute('aria-label', c.name);
     /* caso: captura de la página real sobre negro; debajo, número · categoría y año, nombre con flecha, y el tipo de caso con el cliente (pill) */
     function sp(a) { return '<span lang="es">' + a[0] + '</span><span lang="en">' + a[1] + '</span>'; }
-    a.innerHTML = '<span class="cs-media"><img src="assets/img/cover/' + c.img + '.jpg" alt="" loading="lazy" decoding="async"></span>' +
+    a.innerHTML = '<span class="cs-media"><img src="assets/img/cover/' + c.img + '.jpg?v=2" alt="" loading="lazy" decoding="async"></span>' +
       '<span class="sello" aria-hidden="true"><small><span lang="es">Caso</span><span lang="en">Case</span></small><b>' + c.num + '</b></span>' +
       '<span class="cs-meta"><span>' + c.num + ' · ' + sp(c.cat) + '</span><span>' + sp(c.y) + '</span></span>' +
       '<span class="cs-head"><span class="cs-name">' + (c.nameEn ? sp([c.name, c.nameEn]) : c.name) + '</span><span class="cs-arr" aria-hidden="true">→</span></span>' +
