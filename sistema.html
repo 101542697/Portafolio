@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@300..800&family=Radio+Canada+Big:wght@400..700&family=Radio+Canada:wght@300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/jd.css?v=208">
+<link rel="stylesheet" href="assets/jd.css?v=209">
 </head>
 <body class="ed">
 
@@ -98,15 +98,15 @@
   <div class="sec">
     <h2><b>04</b><span lang="es">Espacio, forma y movimiento</span><span lang="en">Space, shape and motion</span></h2>
     <div>
-      <p class="big" lang="es">Una base de 4 píxeles, cuatro radios y dos tiempos.</p>
-      <p class="big" lang="en">A 4-pixel base, four radii and two durations.</p>
+      <p class="big" lang="es">Una base de 4 píxeles, <span data-count="radii">6</span> radios y <span data-count="dur">3</span> tiempos.</p>
+      <p class="big" lang="en">A 4-pixel base, <span data-count="radii">6</span> radii and <span data-count="dur">3</span> durations.</p>
       <span class="mono mute sub" lang="es">Espacio</span><span class="mono mute sub" lang="en">Space</span>
       <div class="bars" id="space-scale"></div>
       <span class="mono mute sub" lang="es">Radios</span><span class="mono mute sub" lang="en">Radii</span>
       <div class="rads" id="radii"></div>
       <span class="mono mute sub" lang="es">Movimiento y ruido</span><span class="mono mute sub" lang="en">Motion and grain</span>
-      <p class="note" lang="es">0,15 s para cambios de estado en controles y 0,3 s para aparecer y moverse. Todo se detiene con «reducir movimiento». El grano de papel es un solo token, <code>--grain-opacity</code>, y está fijo en 0,07.</p>
-      <p class="note" lang="en">0.15 s for state changes in controls and 0.3 s for appearing and moving. Everything stops under "reduce motion". The paper grain is a single token, <code>--grain-opacity</code>, fixed at 0.07.</p>
+      <p class="note" lang="es">0,15 s para cambios de estado en controles, 0,3 s para aparecer y moverse y 0,5 s para desplazar imágenes y paneles. Todo se detiene con «reducir movimiento». El grano de papel es un solo token, <code>--grain-opacity</code>, y está fijo en 0,07.</p>
+      <p class="note" lang="en">0.15 s for state changes in controls, 0.3 s for appearing and moving and 0.5 s for moving images and panels. Everything stops under "reduce motion". The paper grain is a single token, <code>--grain-opacity</code>, fixed at 0.07.</p>
     </div>
   </div>
 
@@ -237,7 +237,7 @@
     <span class="mono mute sub" lang="es">Rejilla y capítulo</span><span class="mono mute sub" lang="en">Grid and chapter</span>
     <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s-2);max-width:760px">
       <span style="grid-column:1 / 4;background:var(--bg-3);padding:var(--s-2) var(--s-3);font:500 var(--fs-label)/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:var(--ls-label)">Label · 1–3</span>
-      <span style="grid-column:4 / 13;background:rgba(255,216,74,.45);padding:var(--s-2) var(--s-3);font:500 var(--fs-label)/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:var(--ls-label)">Content · 4–12</span>
+      <span style="grid-column:4 / 13;background:color-mix(in srgb,var(--hl) 45%,transparent);padding:var(--s-2) var(--s-3);font:500 var(--fs-label)/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:var(--ls-label)">Content · 4–12</span>
     </div>
     <p class="cap mt-3" lang="es">Doce columnas: rótulo en 1–3 y contenido en 4–12, con el texto a 62 caracteres como máximo. Cada capítulo va sobre un filete negro de 2px. En móvil (≤860px) pasa a una sola columna. La tecla <kbd>G</kbd> dibuja la rejilla encima.</p>
     <p class="cap mt-3" lang="en">Twelve columns: label in 1–3 and content in 4–12, with text capped at 62 characters. Each chapter sits on a 2px black rule. On mobile (≤860px) it collapses to one column. The <kbd>G</kbd> key draws the grid on top.</p>
@@ -271,8 +271,8 @@
           <tr><td lang="es">Rejilla de 12 columnas</td><td lang="en">12-column grid</td><td class="to">6 / 7</td><td><span lang="es">Nuevo</span><span lang="en">New</span></td></tr>
         </tbody>
       </table>
-      <p class="cap mt-4" lang="es"><span class="kt ev">Hecho</span>Conteo del 9 de octubre de 2026 sobre el HTML estático de las 7 páginas; los módulos que se montan con JavaScript no se cuentan (la tarjeta de caso de la portada, el choice y los selectores de Facturación). Antes de unificar había 26 colores, 38 tamaños de letra y 26 radios distintos; la v2 llegó a 12 colores, 9 tamaños y 4 radios, más los tamaños relativos al contenedor de las anotaciones. La capa editorial añadió tres tokens: <code>--fs-stat</code>, <code>--fs-numeral</code> y <code>--sz-sello</code>.</p>
-      <p class="cap mt-4" lang="en"><span class="kt ev">Fact</span>Counted on 9 October 2026 over the static HTML of the 7 pages; modules mounted with JavaScript are not counted (the home case card, the choice and Billing's selectors). Before unifying there were 26 colors, 38 font sizes and 26 distinct radii; v2 reached 12 colors, 9 sizes and 4 radii, plus the container-relative sizes of the annotations. The editorial layer added three tokens: <code>--fs-stat</code>, <code>--fs-numeral</code> and <code>--sz-sello</code>.</p>
+      <p class="cap mt-4" lang="es"><span class="kt ev">Hecho</span>Conteo del 9 de octubre de 2026 sobre el HTML estático de las 7 páginas; los módulos que se montan con JavaScript no se cuentan (la tarjeta de caso de la portada, el choice y los selectores de Facturación). Antes de unificar había 26 colores, 38 tamaños de letra y 26 radios distintos. Hoy los tokens definen <b data-count="colors">16</b> colores, <b data-count="sizes">11</b> tamaños de letra, <b data-count="radii">6</b> radios y <b data-count="dur">3</b> tiempos; fuera de los tokens quedan <b data-count="loose">0</b> colores escritos a mano. Estas cifras se calculan al abrir la página leyendo <code>jd.css</code>.</p>
+      <p class="cap mt-4" lang="en"><span class="kt ev">Fact</span>Counted on 9 October 2026 over the static HTML of the 7 pages; modules mounted with JavaScript are not counted (the home case card, the choice and Billing's selectors). Before unifying there were 26 colors, 38 font sizes and 26 distinct radii. Today the tokens define <b data-count="colors">16</b> colors, <b data-count="sizes">11</b> font sizes, <b data-count="radii">6</b> radii and <b data-count="dur">3</b> durations; outside the tokens there are <b data-count="loose">0</b> hand-written colors. These figures are computed when the page opens, by reading <code>jd.css</code>.</p>
     </div>
   </div>
 
@@ -285,7 +285,7 @@
 </div></footer>
 
 <script src="assets/site.js?v=75"></script>
-<script src="assets/sistema.js?v=35"></script>
+<script src="assets/sistema.js?v=36"></script>
 <script src="assets/editorial.js?v=1"></script>
 </body>
 </html>

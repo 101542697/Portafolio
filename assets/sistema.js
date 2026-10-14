@@ -62,10 +62,26 @@
   /* — radios — */
   var rd = document.getElementById('radii');
   if (rd) {
-    [['--r-sm', 'sm · tags, cajas'], ['--r-md', 'md · tarjetas, marcos'], ['--r-lg', 'lg · teléfonos'], ['--r-pill', 'pill · cápsulas']].forEach(function (r) {
+    [['--r-xs', 'xs · pantallas dentro de un panel'], ['--r-sm', 'sm · tags, cajas'], ['--r-md', 'md · tarjetas, marcos'], ['--r-lg', 'lg · teléfonos'], ['--r-pill', 'pill · cápsulas'], ['--r-round', 'round · discos y avatares']].forEach(function (r) {
       var d = el('div', 'rad'); d.innerHTML = '<div style="border-radius:var(' + r[0] + ')"></div>' + r[1] + '<br>' + tok(r[0]); rd.appendChild(d);
     });
   }
+
+  /* — cifras del sistema: se cuentan leyendo jd.css, así no se desactualizan — */
+  var cssLink = document.querySelector('link[href*="jd.css"]');
+  if (cssLink && window.fetch) fetch(cssLink.href).then(function (r) { return r.text(); }).then(function (css) {
+    var cut = css.indexOf('/* ============ 2 · BASE'), root = css.slice(0, cut), rest = css.slice(cut);
+    var defs = root.match(/--[\w-]+:[^;]+/g) || [];
+    function count(test) { return defs.filter(test).length; }
+    var n = {
+      colors: count(function (d) { return /^--(bg|line|text|hl|on-hl|pen|ok|warn|bad)\b[\w-]*:/.test(d); }),
+      sizes: count(function (d) { return /^--fs-/.test(d); }),
+      radii: count(function (d) { return /^--r-/.test(d); }),
+      dur: count(function (d) { return /^--dur-/.test(d); }),
+      loose: (rest.match(/rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}\b/g) || []).length
+    };
+    document.querySelectorAll('[data-count]').forEach(function (e) { var k = e.getAttribute('data-count'); if (k in n) e.textContent = n[k]; });
+  }).catch(function () {});
 
   /* — demo del control segmentado — */
   var seg = document.getElementById('demo-seg');
