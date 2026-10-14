@@ -42,7 +42,7 @@
     return { set: set, get: function () { return cur; }, btns: btns };
   }
   /* tarjeta del selector de opciones (.persona-pick): avatar, título y estado, igual que en Tarjeta de crédito */
-  function card(n, es, en) { return '<span class="dot" aria-hidden="true">' + n + '</span><span class="pb-txt"><b>' + sp(es, en) + '</b></span><span class="pb-go" aria-hidden="true"><span class="pb-now">' + sp('Viendo', 'Viewing') + '</span><span class="pb-arr">→</span></span>'; }
+  function card(n, es, en) { return '<span class="dot" aria-hidden="true">' + n + '</span><span class="pb-txt"><b>' + sp(es, en) + '</b></span><span class="pb-go" aria-hidden="true"><span class="pb-arr">→</span></span>'; }
   function tabs(host, opts, cur, onChange, label, cards) {
     host.className = (host.className + (cards ? ' persona-nav' : ' vf-tabs')).trim(); host.setAttribute('role', 'tablist'); if (label) lab(host, 'aria-label', label[0], label[1]);
     var btns = opts.map(function (o) {

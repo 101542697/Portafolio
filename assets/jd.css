@@ -1205,7 +1205,7 @@ body[data-case] .hero .sello b{font-size:1.4rem}
 
 /* ============================================================
    Selector de usuarios (Tarjeta de crédito) · tarjetas-botón con más affordance
-   En usabilidad no se percibía como control: ahora tiene pregunta, borde, sombra desplazada y estado «Viendo».
+   En usabilidad no se percibía como control: ahora tiene pregunta, borde y sombra desplazada; el elegido se hunde en tinta.
    ============================================================ */
 body.ed .persona-pick{margin-bottom:var(--s-7)}
 body.ed .persona-q{display:flex;align-items:center;gap:var(--s-2);margin-bottom:var(--s-4);font:500 var(--fs-label)/1.4 var(--f-mono);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-1)}
@@ -1224,8 +1224,6 @@ body.ed .persona-pick .pbtn[aria-selected="true"] .pb-txt small{color:var(--bg-3
 body.ed .persona-pick .pb-go{margin-left:auto;font:500 var(--fs-label)/1 var(--f-mono);letter-spacing:var(--ls-label);text-transform:uppercase}
 body.ed .persona-pick .pb-arr{display:inline-block;font-size:1.1rem;transition:transform var(--dur-1)}
 body.ed .persona-pick .pbtn:hover .pb-arr{transform:translateX(3px)}
-body.ed .persona-pick .pb-now{display:none;color:var(--hl)}
-body.ed .persona-pick .pbtn[aria-selected="true"] .pb-now{display:inline}
 body.ed .persona-pick .pbtn[aria-selected="true"] .pb-arr{display:none}
 @media (max-width:760px){body.ed .persona-pick .persona-nav{grid-template-columns:1fr;gap:var(--s-3)}}
 @media (prefers-reduced-motion:reduce){body.ed .persona-pick .pbtn,body.ed .persona-pick .pb-arr{transition:none}}
@@ -1233,7 +1231,7 @@ body.ed .persona-pick .pbtn[aria-selected="true"] .pb-arr{display:none}
 /* ============================================================
    Facturación · Visual: selectores de capas (03) y especificaciones (04)
    Mismo componente que el selector de usuarios: tarjetas-botón con borde, sombra desplazada,
-   número en círculo y estado «Viendo». El selector y su contenido viven en el bloque derecho (columnas 4–12).
+   número en círculo; el elegido se hunde en tinta. El selector y su contenido viven en el bloque derecho (columnas 4–12).
    ============================================================ */
 body.ed #vf-s3>.vf-sec-body,body.ed #vf-s4>.vf-sec-body{grid-column:4 / 13}
 body.ed .vf-arch,body.ed .vf-docs-body{grid-template-columns:minmax(0,1fr);gap:0}
@@ -1340,7 +1338,5 @@ body.ed #vf-comp-seg button[aria-pressed=true]::before,body.ed .choice button[ar
 .kit-cover dd{font-size:var(--fs-card)}
 .kit-cards{max-width:420px;margin-top:var(--s-3)}
 .kit-cards .cover.cs{display:block;transform:none;color:var(--text-1);text-decoration:none}
-/* Selector de tarjetas-botón: en anchos medios la palabra «Viendo» no cabe junto al nombre; el estado ya lo marcan la tinta y el avatar amarillo */
-@media (max-width:1000px){body.ed .persona-pick .pbtn[aria-selected="true"] .pb-now{display:none}}
 /* Facturación · capas: «Componentes de Facturación» necesita más ancho que las otras dos opciones */
 @media (min-width:761px){body.ed .persona-pick #vf-arch-nav{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,1fr)}}
