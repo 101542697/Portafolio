@@ -106,7 +106,6 @@ strong,b{font-weight:700}
 .mt-4{margin-top:var(--s-4)}
 .mt-5{margin-top:var(--s-5)}
 .mt-7{margin-top:var(--s-7)}
-html[data-lang="en"] .sec>h2 b::before{content:"Ch."}
 
 /* seleccionado: fondo claro invertido, siempre igual en todo el sitio */
 html[data-lang="es"] .lang button[data-set="es"],html[data-lang="en"] .lang button[data-set="en"]{background:var(--text-1);color:var(--bg-0);border-color:var(--text-1);font-weight:700}
