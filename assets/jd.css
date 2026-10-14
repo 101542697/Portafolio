@@ -1212,7 +1212,6 @@ body[data-case] .hero .sello{background:var(--hl);color:var(--on-hl)}
 body[data-case] .hero .sello small{color:rgba(27,24,20,.8)}
 /* sello de portada más contenido (92px → 64px) */
 body[data-case] .hero .sello{width:64px;height:64px;top:-16px;left:-16px}
-body[data-case] .hero .sello small{font-size:.625rem}
 body[data-case] .hero .sello b{font-size:1.4rem}
 
 /* ============================================================

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 768" width="1366" height="768">
+<rect width="1366" height="768" fill="#ffffff"/>
+<rect width="1366" height="69" fill="#e9ebe6"/>
+<rect x="60" y="110" width="780" height="70" rx="6" fill="#dcdfd8"/><rect x="60" y="210" width="520" height="260" rx="6" fill="#dcdfd8"/><rect x="620" y="210" width="220" height="260" rx="6" fill="#dcdfd8"/><rect x="900" y="110" width="400" height="560" rx="6" fill="#dcdfd8"/><rect x="60" y="500" width="780" height="170" rx="6" fill="#dcdfd8"/>
+<text x="683.0" y="384.0" text-anchor="middle" dominant-baseline="middle" font-family="ui-monospace,monospace" font-size="48" letter-spacing="3" fill="#6e695f">IMAGE · 1366 × 768</text>
+</svg>

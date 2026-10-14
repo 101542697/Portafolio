@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+<rect width="600" height="800" fill="#ffffff"/>
+<rect width="600" height="72" fill="#e9ebe6"/>
+<rect x="32" y="100" width="536" height="60" rx="6" fill="#dcdfd8"/><rect x="32" y="190" width="330" height="230" rx="6" fill="#dcdfd8"/><rect x="392" y="190" width="176" height="230" rx="6" fill="#dcdfd8"/><rect x="32" y="450" width="536" height="120" rx="6" fill="#dcdfd8"/><rect x="32" y="600" width="536" height="160" rx="6" fill="#dcdfd8"/>
+<text x="300.0" y="400.0" text-anchor="middle" dominant-baseline="middle" font-family="ui-monospace,monospace" font-size="21" letter-spacing="3" fill="#6e695f">SCREEN · 600 × 800</text>
+</svg>
