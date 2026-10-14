@@ -26,7 +26,7 @@
       '<span class="sello" aria-hidden="true"><small><span lang="es">Caso</span><span lang="en">Case</span></small><b>' + c.num + '</b></span>' +
       '<span class="cs-meta"><span>' + c.num + ' · ' + sp(c.cat) + '</span><span>' + sp(c.y) + '</span></span>' +
       '<span class="cs-head"><span class="cs-name">' + (c.nameEn ? sp([c.name, c.nameEn]) : c.name) + '</span><span class="cs-arr" aria-hidden="true">→</span></span>' +
-      '<span class="cs-tease"><span class="badge cs-kind"><span>' + (c.kind === 'real' ? sp(['Caso real', 'Real case']) : sp(['Caso conceptual', 'Conceptual case'])) + ' · ' + c.client + '</span></span></span>';
+      '<span class="cs-tease"><span class="badge line"><span>' + (c.kind === 'real' ? sp(['Caso real', 'Real case']) : sp(['Caso conceptual', 'Conceptual case'])) + ' · ' + c.client + '</span></span></span>';
     /* la portada siempre entra al caso, también con el panel abierto; el ojo cambia el caso previsualizado */
     /* un solo botón de icono (más) abre la previsualización: sin texto repetido */
     var b = document.createElement('button'); b.type = 'button'; b.className = 'pv-open'; b.setAttribute('aria-expanded', 'false');

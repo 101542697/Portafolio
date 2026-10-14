@@ -144,6 +144,9 @@ html[data-lang="en"] .sec>h2 b::before{content:"Ch."}
 .badge{border-radius:var(--r-pill);padding:5px 13px}
 .badge::before{content:"";width:6px;height:6px;border-radius:var(--r-round);background:currentColor}
 .badge.acid{background:var(--hl);border-color:var(--hl);color:var(--on-hl)}
+/* variantes de la pill: acid (resaltador), inv (clara sobre tinta), line (clara con filete sobre papel) */
+.badge.inv{background:var(--bg-0);border-color:var(--bg-0);color:var(--text-1)}
+.badge.line{flex:none;background:var(--bg-0);border-color:var(--line-3);color:var(--text-1)}
 .tag{margin-left:var(--s-3);vertical-align:middle}
 .kt{margin-right:var(--s-2);vertical-align:2px}
 /* semántica del conocimiento (ux-strategist) */
@@ -209,13 +212,13 @@ html[data-lang="en"] .sec>h2 b::before{content:"Ch."}
 .rc-tabs,.pv-tabs,.pv-seg,.ds-tabs,.persona-nav{display:flex;flex-wrap:wrap;gap:var(--s-2)}
 .rc-tabs,.pv-tabs,.ds-tabs{margin-bottom:var(--s-4)}
 .persona-nav{margin-bottom:var(--s-7)}
-.rc-tabs button,.pv-tabs button,.pv-seg button,.ds-tabs button,.pbtn,.lg-sw button,.lang button{cursor:pointer;border:1px solid var(--line-3);background:none;color:var(--text-2);border-radius:var(--r-sm);padding:var(--s-2) var(--s-4);font-family:var(--f-mono);font-size:var(--fs-label);font-weight:500;letter-spacing:var(--ls-label);line-height:1.3;transition:background var(--dur-1),color var(--dur-1),border-color var(--dur-1)}
+.rc-tabs button,.pv-tabs button,.pv-seg button,.ds-tabs button,.pbtn,.lg-sw button,.lang button,.seg button{cursor:pointer;border:1px solid var(--line-3);background:none;color:var(--text-2);border-radius:var(--r-sm);padding:var(--s-2) var(--s-4);font-family:var(--f-mono);font-size:var(--fs-label);font-weight:500;letter-spacing:var(--ls-label);line-height:1.3;transition:background var(--dur-1),color var(--dur-1),border-color var(--dur-1)}
 .rc-tabs button,.pv-tabs button,.ds-tabs button{font-size:var(--fs-small);padding:var(--s-2) var(--s-4)}
-.rc-tabs button:hover,.pv-tabs button:hover,.pv-seg button:hover,.ds-tabs button:hover,.pbtn:hover,.lg-sw button:hover,.lang button:hover{background:var(--bg-3);color:var(--text-1)}
+.rc-tabs button:hover,.pv-tabs button:hover,.pv-seg button:hover,.ds-tabs button:hover,.pbtn:hover,.lg-sw button:hover,.lang button:hover,.seg button:hover{background:var(--bg-3);color:var(--text-1)}
 /* seleccionado: fondo claro invertido, siempre igual en todo el sitio */
-.rc-tabs button[aria-selected="true"],.pv-tabs button[aria-selected="true"],.pv-seg button[aria-pressed="true"],.ds-tabs button[aria-selected="true"],.pbtn[aria-selected="true"],.lg-sw button[aria-pressed="true"],html[data-lang="es"] .lang button[data-set="es"],html[data-lang="en"] .lang button[data-set="en"]{background:var(--text-1);color:var(--bg-0);border-color:var(--text-1);font-weight:700}
-.lang,.lg-sw{display:inline-flex;border:1px solid var(--line-3);border-radius:var(--r-pill);padding:3px}
-.lang button,.lg-sw button{border:0;border-radius:var(--r-pill)}
+.rc-tabs button[aria-selected="true"],.pv-tabs button[aria-selected="true"],.pv-seg button[aria-pressed="true"],.ds-tabs button[aria-selected="true"],.pbtn[aria-selected="true"],.lg-sw button[aria-pressed="true"],.seg button[aria-selected="true"],html[data-lang="es"] .lang button[data-set="es"],html[data-lang="en"] .lang button[data-set="en"]{background:var(--text-1);color:var(--bg-0);border-color:var(--text-1);font-weight:700}
+.lang,.lg-sw,.seg{display:inline-flex;justify-self:start;width:fit-content;border:1px solid var(--line-3);border-radius:var(--r-pill);padding:3px}
+.lang button,.lg-sw button,.seg button{border:0;border-radius:var(--r-pill)}
 .lg-sw{margin-bottom:var(--s-5)}
 .rc-tabs button i{font-style:normal;opacity:.6;margin-left:var(--s-2)}
 .pbtn{display:flex;align-items:center;gap:var(--s-3);border-radius:var(--r-pill);padding:var(--s-3) var(--s-5) var(--s-3) var(--s-3);font-family:var(--f-display);font-size:var(--fs-body);letter-spacing:0;font-weight:600}
@@ -314,10 +317,16 @@ html[data-lang="en"] .meta::before{content:"Credits"}
 .tab[aria-selected="true"] .n{color:var(--hl)}
 /* — Continuar a la siguiente pestaña: mismo aspecto que la pestaña seleccionada — */
 .to-next{display:flex;justify-content:flex-end;margin-top:var(--s-8)}
-.to-next-btn{display:inline-flex;align-items:center;gap:var(--s-2);background:var(--text-1);color:var(--bg-0);border:0;cursor:pointer;font-family:var(--f-display);font-size:var(--fs-card);font-weight:600;padding:var(--s-3) var(--s-5)}
-.to-next-btn .arr{transition:transform var(--dur-1)}
-.to-next-btn:hover .arr{transform:translateX(4px)}
-.to-next-btn:focus-visible{outline:2px solid var(--hl);outline-offset:3px}
+/* — Botón (.btn): la acción principal de una pantalla. Tinta sólida, texto claro, ancho de su contenido.
+     Variantes por contenido: con flecha (.arr, avanza al señalar) o con icono (svg, baja al señalar). — */
+.btn{display:inline-flex;align-items:center;justify-self:start;width:fit-content;gap:var(--s-2);padding:var(--s-3) var(--s-5);border:0;background:var(--text-1);color:var(--bg-0);font:600 var(--fs-card)/1 var(--f-display);text-decoration:none;cursor:pointer;transition:background var(--dur-1),color var(--dur-1)}
+.btn:hover,.btn:focus-visible{background:var(--hl);color:var(--on-hl)}
+.btn:focus-visible{outline:3px solid var(--text-1);outline-offset:3px}
+.btn .arr,.btn svg{transition:transform var(--dur-1)}
+.btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn:hover .arr,.btn:focus-visible .arr{transform:translateX(4px)}
+.btn:hover svg,.btn:focus-visible svg{transform:translateY(2px)}
+@media (prefers-reduced-motion:reduce){.btn,.btn .arr,.btn svg{transition:none}.btn:hover .arr,.btn:hover svg{transform:none}}
 .tabs-hint{font-family:var(--f-mono);font-size:var(--fs-label);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-3)}
 
 /* — Cierre — */
@@ -745,7 +754,7 @@ html.rail-open{scroll-behavior:auto}
 .vf-seg button:hover{color:var(--text-1)}
 .vf-seg button[aria-pressed=true]{background:var(--text-1);color:var(--bg-0)}
 .vf-seg button:disabled{opacity:.35;cursor:not-allowed}
-.vf-seg button:focus-visible,.vf-tabs button:focus-visible,.vf-notes button:focus-visible,.vf-tree button:focus-visible,.vf-docs-list button:focus-visible,.vf-map button:focus-visible,.vf-prop button:focus-visible,.vf-thumb:focus-visible,.vf-zoom-btn:focus-visible,.vf-mcell:focus-visible,.vf-zoom:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.vf-seg button:focus-visible,.vf-tabs button:focus-visible,.vf-notes button:focus-visible,.vf-tree button:focus-visible,.vf-map button:focus-visible,.vf-prop button:focus-visible,.vf-thumb:focus-visible,.vf-zoom-btn:focus-visible,.vf-mcell:focus-visible,.vf-zoom:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
 .vf-seg-row{margin-bottom:var(--s-3)}
 .vf-tabs{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-5);border-bottom:1px solid var(--line-2)}
 .vf-tabs button{all:unset;box-sizing:border-box;cursor:pointer;padding:10px 0;font:600 var(--fs-small)/1.2 var(--f-mono);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-3);border-bottom:3px solid transparent;margin-bottom:-1px}
@@ -804,10 +813,6 @@ html.rail-open{scroll-behavior:auto}
 .vf-notes button[aria-pressed=true] b{color:var(--text-1);background:linear-gradient(transparent 60%,var(--hl) 60%);justify-self:start}
 /* arquitectura */
 .vf-arch{display:grid;grid-template-columns:240px minmax(0,1fr);gap:var(--s-7);align-items:start}
-.vf-arch-nav{display:grid;gap:var(--s-2);border:0}
-.vf-arch-nav button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:var(--s-3);width:100%;padding:var(--s-4);border:1px solid var(--line-3);border-radius:var(--r-md);font:700 var(--fs-h4)/1.2 var(--f-display);background:var(--bg-1);margin:0}
-.vf-arch-nav button b{width:28px;height:28px;margin:0}
-.vf-arch-nav button[aria-selected=true]{background:var(--text-1);color:var(--bg-0);border-color:var(--text-1)}
 .vf-arch-head{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s-3);margin-bottom:var(--s-3)}
 .vf-arch-head h3{font:700 var(--fs-h3)/1.1 var(--f-display)}
 .vf-re{margin-top:var(--s-2);color:var(--text-2);font-size:var(--fs-card)}
@@ -894,11 +899,6 @@ html.rail-open{scroll-behavior:auto}
 .vf-st{font:700 var(--fs-label)/1 var(--f-mono);letter-spacing:var(--ls-label);padding:6px 10px;border-radius:var(--r-sm)}
 .vf-done{background:var(--bg-3);color:var(--ok)}.vf-wip{background:var(--hl);color:var(--on-hl)}
 .vf-docs-body{display:grid;grid-template-columns:260px minmax(0,1fr);gap:var(--s-6);padding-top:var(--s-5);align-items:start}
-.vf-docs-list{list-style:none;display:grid;gap:var(--s-2)}
-.vf-docs-list button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:2px;width:100%;padding:var(--s-3) var(--s-4);border:1px solid var(--line-3);border-radius:var(--r-md);background:var(--bg-1)}
-.vf-docs-list .t{font-weight:700}.vf-docs-list .k{font:500 var(--fs-label)/1.3 var(--f-mono);color:var(--text-3)}
-.vf-docs-list button[aria-pressed=true]{background:var(--text-1);color:var(--bg-0);border-color:var(--text-1)}
-.vf-docs-list button[aria-pressed=true] .k{color:var(--line-3)}
 .vf-docs-view{margin:0;max-height:760px;overflow:auto;background:var(--bg-2);border-radius:var(--r-md);padding:var(--s-3)}
 .vf-docs-view img{display:block;max-width:100%;margin:0 auto;border-radius:var(--r-sm)}
 .vf-docs-view figcaption{font-size:var(--fs-small);color:var(--text-2);margin-top:var(--s-3);line-height:1.5}
@@ -911,13 +911,11 @@ html.rail-open{scroll-behavior:auto}
 .vf-rule small{grid-column:2;color:var(--text-3);font-size:var(--fs-small);margin-top:calc(-1 * var(--s-4))}
 @media (max-width:980px){
   .vf-hero,.vf-two,.vf-arch,.vf-conf-view,.vf-m-detail,.vf-docs-body,.vf-rule,.vf-ficha-grid{grid-template-columns:minmax(0,1fr)}
-  .vf-arch-nav{grid-template-columns:repeat(3,minmax(0,1fr))}
   .vf-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .vf-notes{grid-template-columns:1fr}
   .vf-rule small{grid-column:1;margin-top:0}
 }
 @media (max-width:560px){
-  .vf-arch-nav{grid-template-columns:1fr}
   .vf-cmp2-grid{grid-template-columns:1fr}
   .vf-title{font-size:var(--fs-big)}
 }
@@ -1053,14 +1051,6 @@ body.ed .vf-seg{border:0;border-radius:0;padding:0;gap:var(--s-1);background:non
 body.ed .vf-seg button{border-radius:0;padding:var(--s-2) var(--s-4);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-3)}
 body.ed .vf-seg button:hover{color:var(--text-1)}
 body.ed .vf-seg button[aria-pressed=true]{background:var(--text-1);color:var(--bg-0)}
-body.ed .vf-arch-nav{gap:0}
-body.ed .vf-arch-nav button,body.ed .vf-docs-list button{border:0;border-top:1px solid var(--line-3);border-radius:0;background:none;padding:var(--s-3)}
-body.ed .vf-arch-nav button:last-child,body.ed .vf-docs-list li:last-child button{border-bottom:1px solid var(--line-3)}
-body.ed .vf-arch-nav button b{width:auto;height:auto;border-radius:0;background:none;color:var(--text-3);font:600 var(--fs-label)/1 var(--f-mono)}
-body.ed .vf-arch-nav button[aria-selected=true],body.ed .vf-docs-list button[aria-pressed=true]{background:var(--text-1);color:var(--bg-0);border-color:var(--text-1)}
-body.ed .vf-arch-nav button[aria-selected=true] b{background:none;color:var(--hl)}
-body.ed .vf-docs-list .k{color:var(--text-3)}
-body.ed .vf-docs-list button[aria-pressed=true] .k{color:var(--hl)}
 body.ed .vf-st{background:none;border-radius:0;padding:0}
 body.ed .vf-st.vf-done{color:var(--ok)}
 body.ed .vf-st.vf-wip{background:linear-gradient(transparent 62%,var(--hl) 62%);color:var(--text-1);padding:0 .15em}
@@ -1200,7 +1190,6 @@ body.ed .sec.key .ed-item.etapa .mono{background:linear-gradient(transparent 62%
 body[data-case]{--case-bg:var(--text-1);--case-fg:var(--bg-0)}
 body[data-case] .hero{background:var(--case-bg);color:var(--case-fg);border-bottom:3px solid var(--hl)}
 body[data-case] .hero h1{font-size:var(--fs-display);line-height:.95;letter-spacing:-.04em;max-width:none}
-body[data-case] .hero .badge{background:var(--case-fg);border-color:var(--case-fg);color:var(--case-bg)}
 body[data-case] .hero .meta::before{color:inherit;border-bottom-color:currentColor}
 body[data-case] .hero .meta>div{border-bottom:1px solid color-mix(in srgb,currentColor 35%,transparent)}
 body[data-case] .hero .meta>div:last-child,body[data-case] .hero .meta>div:nth-last-child(2):nth-child(odd){border-bottom:0}
@@ -1248,25 +1237,9 @@ body.ed .persona-pick .pbtn[aria-selected="true"] .pb-arr{display:none}
    ============================================================ */
 body.ed #vf-s3>.vf-sec-body,body.ed #vf-s4>.vf-sec-body{grid-column:4 / 13}
 body.ed .vf-arch,body.ed .vf-docs-body{grid-template-columns:minmax(0,1fr);gap:0}
-body.ed .vf-arch>.persona-q,body.ed .vf-docs-body>.persona-q{margin-bottom:var(--s-4)}
-body.ed .vf-arch-nav,body.ed .vf-docs-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-4);margin-bottom:var(--s-6);border:0}
-body.ed .vf-arch-nav button,body.ed .vf-docs-list button,body.ed .vf-arch-nav button:last-child,body.ed .vf-docs-list li:last-child button{display:flex;align-items:center;gap:var(--s-3);width:100%;height:100%;box-sizing:border-box;padding:var(--s-3) var(--s-4) var(--s-3) var(--s-3);border:2px solid var(--text-1);border-radius:var(--r-sm);background:var(--bg-0);color:var(--text-1);box-shadow:4px 4px 0 var(--text-1);font:600 var(--fs-card)/1.2 var(--f-display);text-align:left;cursor:pointer;transition:transform var(--dur-1),box-shadow var(--dur-1),background var(--dur-1)}
-body.ed .vf-arch-nav button:hover,body.ed .vf-docs-list button:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--text-1)}
-body.ed .vf-arch-nav button:focus-visible,body.ed .vf-docs-list button:focus-visible{outline:3px solid var(--hl);outline-offset:3px}
-body.ed .vf-arch-nav button[aria-selected=true],body.ed .vf-docs-list button[aria-pressed=true]{background:var(--text-1);color:var(--bg-0);border-color:var(--text-1);transform:translate(4px,4px);box-shadow:0 0 0 var(--text-1);cursor:default}
-body.ed .vf-arch-nav button b,body.ed .vf-docs-list button b{flex:none;width:36px;height:36px;border-radius:var(--r-round);background:var(--bg-3);color:var(--text-1);display:grid;place-items:center;font:700 1rem/1 var(--f-display)}
-body.ed .vf-arch-nav button[aria-selected=true] b,body.ed .vf-docs-list button[aria-pressed=true] b{background:var(--hl);color:var(--on-hl)}
-body.ed .vf-docs-list .t{font-weight:600}
-body.ed .vf-arch-nav button::after,body.ed .vf-docs-list button::after{content:"→";margin-left:auto;padding-left:var(--s-2);font:500 1.05rem/1 var(--f-mono);transition:transform var(--dur-1)}
-body.ed .vf-arch-nav button:hover::after,body.ed .vf-docs-list button:hover::after{transform:translateX(3px)}
-body.ed .vf-arch-nav button[aria-selected=true]::after,body.ed .vf-docs-list button[aria-pressed=true]::after{content:"Viendo";font-size:var(--fs-label);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--hl);transform:none}
-html[data-lang="en"] body.ed .vf-arch-nav button[aria-selected=true]::after,html[data-lang="en"] body.ed .vf-docs-list button[aria-pressed=true]::after{content:"Viewing"}
-body.ed .vf-arch-nav{overflow:visible;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,1fr)}
-body.ed .vf-arch-nav button,body.ed .vf-docs-list button{margin:0;letter-spacing:0;text-transform:none}
-body.ed .vf-arch-nav button b,body.ed .vf-docs-list button b{margin:0}
 @media (max-width:860px){body.ed #vf-s3>.vf-sec-body,body.ed #vf-s4>.vf-sec-body{grid-column:1 / -1}}
-@media (max-width:760px){body.ed .vf-arch-nav,body.ed .vf-docs-list{grid-template-columns:minmax(0,1fr);gap:var(--s-3)}}
-@media (prefers-reduced-motion:reduce){body.ed .vf-arch-nav button,body.ed .vf-docs-list button,body.ed .vf-arch-nav button::after,body.ed .vf-docs-list button::after{transition:none}}
+
+
 
 /* ============================================================
    Choice (chips) · .choice; lo usa el selector Deuda / Mes / En curso de Facturación (#vf-comp-seg)
@@ -1302,7 +1275,6 @@ body.ed #vf-comp-seg button[aria-pressed=true]::before,body.ed .choice button[ar
 .cs-tease{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2) var(--s-3);margin-top:var(--s-3);max-width:60ch;color:var(--text-2)}
 /* tipo de caso: mismo pill y colores que en la portada de cada caso (fondo claro, texto y punto oscuros);
    el filete lo separa del fondo de la home, que es del mismo tono */
-.cs-kind{display:inline-flex;align-items:center;gap:7px;flex:none;background:var(--bg-0);border-color:var(--line-3);color:var(--text-1)}
 /* sello: solo en las miniaturas con el panel abierto */
 .cover.cs .sello{display:none}
 /* rejilla: dos columnas iguales */
@@ -1326,12 +1298,7 @@ body.ed #vf-comp-seg button[aria-pressed=true]::before,body.ed .choice button[ar
 @media (max-width:560px){.home:not(.is-open){grid-template-columns:minmax(0,1fr);row-gap:var(--s-7)}}
 @media (prefers-reduced-motion:reduce){.cs-media img,.cs-name,.cs-arr{transition:none}.cover.cs:hover .cs-media img,.cover.cs:hover .cs-arr{transform:none}}
 /* PORTADA · botón para descargar el CV: mismo aspecto que «Continuar con Visual» (tinta sólida, texto claro) */
-.cv-btn{display:inline-flex;align-items:center;justify-self:start;width:fit-content;gap:var(--s-2);margin-top:var(--s-5);padding:var(--s-3) var(--s-5);background:var(--text-1);color:var(--bg-0);text-decoration:none;font:600 var(--fs-card)/1 var(--f-display);transition:background var(--dur-1),color var(--dur-1)}
-.cv-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--dur-1)}
-.cv-btn:hover,.cv-btn:focus-visible{background:var(--hl);color:var(--on-hl)}
-.cv-btn:hover svg,.cv-btn:focus-visible svg{transform:translateY(2px)}
-.cv-btn:focus-visible{outline:3px solid var(--text-1);outline-offset:3px}
-@media (prefers-reduced-motion:reduce){.cv-btn,.cv-btn svg{transition:none}.cv-btn:hover svg{transform:none}}
+.intro-txt .btn{margin-top:var(--s-5)}
 
 /* ============================================================
    PORTADA · pestañas «Casos de estudio» / «IA» con el mismo componente que los casos (.tab):
@@ -1364,9 +1331,7 @@ body.ed #vf-comp-seg button[aria-pressed=true]::before,body.ed .choice button[ar
 .kit-tabs{justify-content:flex-start;border-bottom:1px solid var(--line-1);margin-top:var(--s-3)}
 .kit-pick{max-width:860px;margin:var(--s-3) 0 var(--s-3)}
 .kit-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-4);margin-top:var(--s-3)}
-.kit-row .to-next-btn,.kit-row .cv-btn{margin-top:0}
 .kit-cover{max-width:620px;margin-top:var(--s-3);padding:var(--s-6) var(--s-6) var(--s-5);background:var(--text-1);color:var(--bg-0);border-bottom:3px solid var(--hl);border-radius:var(--r-sm) var(--r-sm) 0 0}
-.kit-cover .badge{background:var(--bg-0);border-color:var(--bg-0);color:var(--text-1)}
 .kit-cover-t{margin-top:var(--s-4);font:700 var(--fs-display-sm)/.95 var(--f-display);letter-spacing:-.04em}
 .kit-cover-t::after{content:"";display:block;margin-top:.3em;height:3px;width:100%;max-width:7em;background:var(--bg-0)}
 .kit-cover dl{margin-top:var(--s-5);border-top:1px solid color-mix(in srgb,currentColor 35%,transparent);padding-top:var(--s-3)}
@@ -1377,3 +1342,5 @@ body.ed #vf-comp-seg button[aria-pressed=true]::before,body.ed .choice button[ar
 .kit-cards .cover.cs{display:block;transform:none;color:var(--text-1);text-decoration:none}
 /* Selector de tarjetas-botón: en anchos medios la palabra «Viendo» no cabe junto al nombre; el estado ya lo marcan la tinta y el avatar amarillo */
 @media (max-width:1000px){body.ed .persona-pick .pbtn[aria-selected="true"] .pb-now{display:none}}
+/* Facturación · capas: «Componentes de Facturación» necesita más ancho que las otras dos opciones */
+@media (min-width:761px){body.ed .persona-pick #vf-arch-nav{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,1fr)}}

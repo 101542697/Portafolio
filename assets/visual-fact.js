@@ -41,10 +41,12 @@
     set(cur, false);
     return { set: set, get: function () { return cur; }, btns: btns };
   }
-  function tabs(host, opts, cur, onChange, label) {
-    host.className = (host.className + ' vf-tabs').trim(); host.setAttribute('role', 'tablist'); if (label) lab(host, 'aria-label', label[0], label[1]);
+  /* tarjeta del selector de opciones (.persona-pick): avatar, título y estado, igual que en Tarjeta de crédito */
+  function card(n, es, en) { return '<span class="dot" aria-hidden="true">' + n + '</span><span class="pb-txt"><b>' + sp(es, en) + '</b></span><span class="pb-go" aria-hidden="true"><span class="pb-now">' + sp('Viendo', 'Viewing') + '</span><span class="pb-arr">→</span></span>'; }
+  function tabs(host, opts, cur, onChange, label, cards) {
+    host.className = (host.className + (cards ? ' persona-nav' : ' vf-tabs')).trim(); host.setAttribute('role', 'tablist'); if (label) lab(host, 'aria-label', label[0], label[1]);
     var btns = opts.map(function (o) {
-      var b = el('button', '', (o.n ? '<b>' + o.n + '</b>' : '') + sp(o.es, o.en)); b.type = 'button'; b.setAttribute('role', 'tab'); b.dataset.v = o.v;
+      var b = el('button', cards ? 'pbtn' : '', cards ? card(o.n, o.es, o.en) : (o.n ? '<b>' + o.n + '</b>' : '') + sp(o.es, o.en)); b.type = 'button'; b.setAttribute('role', 'tab'); b.dataset.v = o.v;
       b.addEventListener('click', function () { set(o.v); });
       b.addEventListener('keydown', function (e) {
         var i = btns.indexOf(b), d = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0; if (!d) return;
@@ -114,9 +116,9 @@
       { v: 'l3', n: '3', es: 'Pantallas', en: 'Screens', kind: 'own', d: ['Summary (web) y Mobile: 12 variantes cada uno, con Site y Estado como propiedades, compuestos con instancias y configuraciones.', 'Summary (web) and Mobile: 12 variants each, with Site and Status as properties, composed with instances and configurations.'], re: ['Composición de las capas 1 y 2 en las pantallas web y mobile.', 'Composition of layers 1 and 2 into the web and mobile screens.'],
         img: 'sc-vencido-web', cap: ['Summary web en estado vencido, compuesto con instancias de los componentes anteriores.', 'Web Summary in overdue state, composed with instances of the components above.'] }
     ];
-    host.innerHTML = '<p class="persona-q">' + sp('Elige una capa · cambia el detalle', 'Choose a layer · the detail changes') + '</p><div class="vf-arch-nav" id="vf-arch-nav"></div><div class="vf-arch-panel" id="vf-arch-panel"></div>';
+    host.innerHTML = '<div class="persona-pick"><p class="persona-q">' + sp('Elige una capa · cambia el detalle', 'Choose a layer · the detail changes') + '</p><div id="vf-arch-nav"></div></div><div class="vf-arch-panel" id="vf-arch-panel"></div>';
     var nav = $('#vf-arch-nav'), panel = $('#vf-arch-panel'), cur = 'l2', comp = 'deuda';
-    var tb = tabs(nav, LAY.map(function (l) { return { v: l.v, es: l.es, en: l.en, n: l.n }; }), cur, function (v) { cur = v; paint(); }, ['Capas de la arquitectura', 'Architecture layers']);
+    var tb = tabs(nav, LAY.map(function (l) { return { v: l.v, es: l.es, en: l.en, n: l.n }; }), cur, function (v) { cur = v; paint(); }, ['Capas de la arquitectura', 'Architecture layers'], true);
     nav.setAttribute('aria-orientation', 'horizontal');
     function ficha() {
       var p = PROPS[comp];
@@ -145,21 +147,21 @@
         { f: 'spec-medidas-entre-cards', es: 'Medidas entre cards', en: 'Spacing between cards', n: '8648:19100', c: ['Espaciado entre las cards del Summary.', 'Spacing between the Summary cards.'], w: 1900 },
       ]
     };
-    host.innerHTML = '<div class="vf-docs-body"><p class="persona-q">' + sp('Elige una especificación · cambia la lámina', 'Choose a specification · the sheet changes') + '</p><ul class="vf-docs-list" id="vf-docs-list"></ul><figure class="vf-docs-view" id="vf-docs-view" aria-live="polite"></figure></div>' +
+    host.innerHTML = '<div class="vf-docs-body"><div class="persona-pick"><p class="persona-q">' + sp('Elige una especificación · cambia la lámina', 'Choose a specification · the sheet changes') + '</p><div class="persona-nav" id="vf-docs-list" role="tablist"></div></div><figure class="vf-docs-view" id="vf-docs-view" aria-live="polite"></figure></div>' +
       '<div class="vf-rule"><p>' + sp('«Se muestran tres meses, incluido el mes en curso, en cualquier casuística.»', '“Three months are shown, including the open month, in every scenario.”') + '</p><div class="vf-rule-fig"><img src="' + AD + 'despues.jpg?v=1" alt=""><i style="left:8.12%;top:30%;width:62.2%;height:38.1%"></i></div></div>';
     $('.vf-rule-fig img', host).alt = T(['Summary con tres meses visibles', 'Summary with three months visible']);
     var cur = 'componentes', idx = 0;
     function paint() {
-      var items = D[cur], ul = $('#vf-docs-list'); ul.innerHTML = '';
+      var items = D[cur], list = $('#vf-docs-list'); list.innerHTML = '';
       items.forEach(function (it, i) {
-        var li = el('li', '', '<button type="button" aria-pressed="false"><b>' + (i + 1) + '</b><span class="t">' + sp(it.es, it.en) + '</span></button>');
-        li.firstChild.addEventListener('click', function () { idx = i; show(); }); ul.appendChild(li);
+        var b = el('button', 'pbtn', card(i + 1, it.es, it.en)); b.type = 'button'; b.setAttribute('role', 'tab');
+        b.addEventListener('click', function () { idx = i; show(); }); list.appendChild(b);
       });
       show();
     }
     function show() {
       var it = D[cur][idx], u = src(it.f);
-      $$('#vf-docs-list button').forEach(function (b, i) { b.setAttribute('aria-pressed', i === idx); });
+      $$('#vf-docs-list .pbtn').forEach(function (b, i) { b.setAttribute('aria-selected', i === idx); b.tabIndex = i === idx ? 0 : -1; });
       $('#vf-docs-view').innerHTML = (u ? '<img src="' + u + '" alt="" loading="lazy">' : empty('Evidencia no disponible', 'Evidence not available'));
       var im = $('#vf-docs-view img'); if (im) { im.alt = T([it.es, it.en]); zoomable(im, it.w); }
     }
