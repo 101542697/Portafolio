@@ -59,7 +59,9 @@
     return { set: set, get: function () { return cur; } };
   }
   function empty(msgEs, msgEn) { return '<div class="vf-empty" role="status">' + sp(msgEs, msgEn) + '</div>'; }
-  function fig(name, alt, cap, w) { var u = src(name); if (!u) return empty('Evidencia no disponible', 'Evidence not available'); return '<img src="' + u + '" alt="' + alt + '" loading="lazy">'; }
+  /* alt bilingüe: site.js lo cambia al cambiar de idioma (data-alt-es / data-alt-en) */
+  function alt2(img, es, en) { if (!img) return; img.setAttribute('data-alt-es', es); img.setAttribute('data-alt-en', en); img.alt = T([es, en]); }
+  function fig(name, alt, cap, w) { var u = src(name); if (!u) return empty('Evidencia no disponible', 'Evidence not available'); var bi = Array.isArray(alt); return '<img src="' + u + '" alt="' + (bi ? T(alt) : alt) + '"' + (bi ? ' data-alt-es="' + alt[0] + '" data-alt-en="' + alt[1] + '"' : '') + ' loading="lazy">'; }
 
   /* ======================================================= 01 · HERO */
   (function () {
@@ -69,7 +71,7 @@
       '<figure class="vf-duo-m"><img src="' + src('sc-vencido-mobile') + '" alt=""><span class="vf-lab">Mobile</span></figure></div>' +
       '</div>';
     var im = $$('.vf-duo img', host);
-    im[0].alt = T(['Summary desktop en estado vencido', 'Summary desktop, overdue state']); im[1].alt = T(['Summary mobile en estado vencido', 'Summary mobile, overdue state']);
+    alt2(im[0], 'Summary desktop en estado vencido', 'Summary desktop, overdue state'); alt2(im[1], 'Summary mobile en estado vencido', 'Summary mobile, overdue state');
     zoomable(im[0], 1500); zoomable(im[1], 520);
   })();
   /* ======================================================= 02 · COMPARADOR */
@@ -88,7 +90,7 @@
       '<div class="vf-cmp-layer vf-cmp-a"><img src="' + AD + 'despues.jpg?v=1" alt="">' + NOTES.map(function (n, i) { return '<i class="vf-reg" data-i="' + i + '" style="' + pc(n.a) + '"></i>'; }).join('') + '<span class="vf-lab">' + sp('Después', 'After') + '</span></div>' +
       '</div>' +
       '<ol class="vf-notes" id="vf-cmp-notes"></ol>';
-    var imgs = $$('.vf-cmp-layer img', host); imgs[0].alt = T(['Summary anterior', 'Previous Summary']); imgs[1].alt = T(['Summary nuevo con períodos visibles', 'New Summary with visible periods']);
+    var imgs = $$('.vf-cmp-layer img', host); alt2(imgs[0], 'Summary anterior', 'Previous Summary'); alt2(imgs[1], 'Summary nuevo con períodos visibles', 'New Summary with visible periods');
     host.classList.add('is-stack');
     $$('.vf-cmp-layer img', host).forEach(function (im) { zoomable(im, 1600); });
     var sel = -1, list = $('#vf-cmp-notes');
@@ -129,7 +131,7 @@
     function paint() {
       var l = LAY.filter(function (x) { return x.v === cur; })[0];
       var h = '<div class="vf-arch-head"><h3>' + sp(l.es, l.en) + '</h3></div><p>' + sp(l.d[0], l.d[1]) + '</p><p class="vf-re">' + sp(l.re[0], l.re[1]) + '</p>';
-      if (l.v === 'l2') h += ficha(); else if (l.img) h += '<figure class="vf-arch-fig">' + fig(l.img, T(l.cap), '') + '</figure>';
+      if (l.v === 'l2') h += ficha(); else if (l.img) h += '<figure class="vf-arch-fig">' + fig(l.img, l.cap, '') + '</figure>';
       panel.innerHTML = h; panel.setAttribute('role', 'tabpanel');
       if (l.v === 'l2') seg($('#vf-comp-seg'), [{ v: 'deuda', es: 'Deuda', en: 'Deuda' }, { v: 'mes', es: 'Mes', en: 'Mes' }, { v: 'encurso', es: 'En curso', en: 'En curso' }], comp, function (v, user) { comp = v; if (user) paint(); }, ['Componente', 'Component']);
       $$('img', panel).forEach(function (i) { zoomable(i, 2400); });
@@ -149,7 +151,7 @@
     };
     host.innerHTML = '<div class="vf-docs-body"><div class="persona-pick"><p class="persona-q">' + sp('Elige una especificación · cambia la lámina', 'Choose a specification · the sheet changes') + '</p><div class="persona-nav" id="vf-docs-list" role="tablist"></div></div><figure class="vf-docs-view" id="vf-docs-view" aria-live="polite"></figure></div>' +
       '<div class="vf-rule"><p>' + sp('«Se muestran tres meses, incluido el mes en curso, en cualquier casuística.»', '“Three months are shown, including the open month, in every scenario.”') + '</p><div class="vf-rule-fig"><img src="' + AD + 'despues.jpg?v=1" alt=""><i style="left:8.12%;top:30%;width:62.2%;height:38.1%"></i></div></div>';
-    $('.vf-rule-fig img', host).alt = T(['Summary con tres meses visibles', 'Summary with three months visible']);
+    alt2($('.vf-rule-fig img', host), 'Summary con tres meses visibles', 'Summary with three months visible');
     var cur = 'componentes', idx = 0;
     function paint() {
       var items = D[cur], list = $('#vf-docs-list'); list.innerHTML = '';
@@ -163,7 +165,7 @@
       var it = D[cur][idx], u = src(it.f);
       $$('#vf-docs-list .pbtn').forEach(function (b, i) { b.setAttribute('aria-selected', i === idx); b.tabIndex = i === idx ? 0 : -1; });
       $('#vf-docs-view').innerHTML = (u ? '<img src="' + u + '" alt="" loading="lazy">' : empty('Evidencia no disponible', 'Evidence not available'));
-      var im = $('#vf-docs-view img'); if (im) { im.alt = T([it.es, it.en]); zoomable(im, it.w); }
+      var im = $('#vf-docs-view img'); if (im) { alt2(im, it.es, it.en); zoomable(im, it.w); }
     }
     paint();
   })();

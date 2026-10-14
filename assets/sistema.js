@@ -25,17 +25,17 @@
   var tb = document.querySelector('#contrast tbody');
   if (tb) {
     var bgs = ['--bg-0', '--bg-1', '--bg-2', '--bg-3'];
-    [['--text-1', 'Texto'], ['--text-2', 'Texto secundario'], ['--text-3', 'Etiquetas'], ['--pen', 'Tinta azul'], ['--ok', 'Hecho'], ['--warn', 'Hipótesis'], ['--bad', 'Error']].forEach(function (r) {
+    [['--text-1', sp('Texto', 'Text')], ['--text-2', sp('Texto secundario', 'Secondary text')], ['--text-3', sp('Etiquetas', 'Labels')], ['--pen', sp('Tinta azul', 'Blue ink')], ['--ok', sp('Hecho', 'Fact')], ['--warn', sp('Hipótesis', 'Hypothesis')], ['--bad', 'Error']].forEach(function (r) {
       var tr = el('tr'); tr.appendChild(el('td', '', r[1] + '<small>' + r[0] + ' · ' + tok(r[0]) + '</small>'));
       bgs.forEach(function (b) {
         var q = ratio(tok(r[0]), tok(b));
-        var lvl = q >= 7 ? 'AAA' : q >= 4.5 ? 'AA' : 'no pasa';
+        var lvl = q >= 7 ? 'AAA' : q >= 4.5 ? 'AA' : sp('no pasa', 'fails');
         tr.appendChild(el('td', 'to', q.toFixed(1) + ':1<small>' + lvl + '</small>'));
       });
       tb.appendChild(tr);
     });
     var q2 = ratio(tok('--on-hl'), tok('--hl')), tr2 = el('tr');
-    tr2.appendChild(el('td', '', 'Tinta sobre resaltador<small>--on-hl sobre --hl</small>'));
+    tr2.appendChild(el('td', '', sp('Tinta sobre resaltador', 'Ink on highlighter') + '<small>--on-hl ' + sp('sobre', 'on') + ' --hl</small>'));
     tr2.appendChild(el('td', 'to', q2.toFixed(1) + ':1<small>' + (q2 >= 7 ? 'AAA' : 'AA') + '</small>'));
     tb.appendChild(tr2);
   }
@@ -43,7 +43,7 @@
   /* — escala tipográfica — */
   var ts = document.getElementById('type-scale');
   if (ts) {
-    [['--fs-display', 'Display', 'var(--f-display)', 700], ['--fs-display-sm', 'Display compacto', 'var(--f-display)', 700], ['--fs-numeral', 'Numeral de etapa', 'var(--f-display)', 700], ['--fs-big', 'Frase de apertura', 'var(--f-display)', 600], ['--fs-stat', 'Cifra de dato', 'var(--f-display)', 700], ['--fs-h3', 'Título de sección', 'var(--f-display)', 600], ['--fs-h4', 'Título de bloque', 'var(--f-display)', 600], ['--fs-body', 'Cuerpo', 'var(--f-text)', 400], ['--fs-card', 'Cuerpo en bloque', 'var(--f-text)', 400], ['--fs-small', 'Texto pequeño', 'var(--f-text)', 400], ['--fs-label', 'Etiqueta mono', 'var(--f-mono)', 500]].forEach(function (r) {
+    [['--fs-display', 'Display', 'var(--f-display)', 700], ['--fs-display-sm', sp('Display compacto', 'Compact display'), 'var(--f-display)', 700], ['--fs-numeral', sp('Numeral de etapa', 'Stage numeral'), 'var(--f-display)', 700], ['--fs-big', sp('Frase de apertura', 'Opening line'), 'var(--f-display)', 600], ['--fs-stat', sp('Cifra de dato', 'Data figure'), 'var(--f-display)', 700], ['--fs-h3', sp('Título de sección', 'Section title'), 'var(--f-display)', 600], ['--fs-h4', sp('Título de bloque', 'Block title'), 'var(--f-display)', 600], ['--fs-body', sp('Cuerpo', 'Body'), 'var(--f-text)', 400], ['--fs-card', sp('Cuerpo en bloque', 'Block body'), 'var(--f-text)', 400], ['--fs-small', sp('Texto pequeño', 'Small text'), 'var(--f-text)', 400], ['--fs-label', sp('Etiqueta mono', 'Mono label'), 'var(--f-mono)', 500]].forEach(function (r) {
       var row = el('div', 'type-row');
       row.innerHTML = '<code>' + r[0] + '</code><span style="font-family:' + r[2] + ';font-weight:' + r[3] + ';font-size:var(' + r[0] + ');line-height:1.2' + (r[0] === '--fs-label' ? ';letter-spacing:.06em;text-transform:uppercase' : '') + '">' + r[1] + '</span><em></em>';
       ts.appendChild(row);
@@ -62,7 +62,7 @@
   /* — radios — */
   var rd = document.getElementById('radii');
   if (rd) {
-    [['--r-xs', 'xs · pantallas dentro de un panel'], ['--r-sm', 'sm · tags, cajas'], ['--r-md', 'md · tarjetas, marcos'], ['--r-lg', 'lg · teléfonos'], ['--r-pill', 'pill · cápsulas'], ['--r-round', 'round · discos y avatares']].forEach(function (r) {
+    [['--r-xs', sp('xs · pantallas dentro de un panel', 'xs · screens inside a panel')], ['--r-sm', sp('sm · tags, cajas', 'sm · tags, boxes')], ['--r-md', sp('md · tarjetas, marcos', 'md · cards, frames')], ['--r-lg', sp('lg · teléfonos', 'lg · phones')], ['--r-pill', sp('pill · cápsulas', 'pill · capsules')], ['--r-round', sp('round · discos y avatares', 'round · discs and avatars')]].forEach(function (r) {
       var d = el('div', 'rad'); d.innerHTML = '<div style="border-radius:var(' + r[0] + ')"></div>' + r[1] + '<br>' + tok(r[0]); rd.appendChild(d);
     });
   }

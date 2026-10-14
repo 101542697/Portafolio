@@ -19,7 +19,7 @@
   CASES.forEach(function (c, i) {
     var item = document.createElement('div'); item.className = 'item';
     var fl = document.createElement('div'); fl.className = 'fl';
-    var a = document.createElement('a'); a.className = 'cover cs cs-' + c.num; a.href = c.href; a.setAttribute('aria-label', c.name);
+    var a = document.createElement('a'); a.className = 'cover cs cs-' + c.num; a.href = c.href; a.setAttribute('aria-label', c.name); if (c.nameEn) a.setAttribute('data-label-en', c.nameEn);
     /* caso: captura de la página real sobre negro; debajo, número · categoría y año, nombre con flecha, y el tipo de caso con el cliente (pill) */
     function sp(a) { return '<span lang="es">' + a[0] + '</span><span lang="en">' + a[1] + '</span>'; }
     a.innerHTML = '<span class="cs-media"><img src="assets/img/cover/' + c.img + '.jpg?v=2" alt="" loading="lazy" decoding="async"></span>' +
@@ -30,10 +30,12 @@
     /* la portada siempre entra al caso, también con el panel abierto; el ojo cambia el caso previsualizado */
     /* un solo botón de icono (más) abre la previsualización: sin texto repetido */
     var b = document.createElement('button'); b.type = 'button'; b.className = 'pv-open'; b.setAttribute('aria-expanded', 'false');
-    b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span class="sr"><span lang="es">Previsualizar ' + c.name + '</span><span lang="en">Preview ' + c.name + '</span></span>';
+    b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span class="sr"><span lang="es">Previsualizar ' + c.name + '</span><span lang="en">Preview ' + (c.nameEn || c.name) + '</span></span>';
     b.addEventListener('click', function () { if (home.classList.contains('is-open')) select(i); else openRail(i, b); });
     fl.appendChild(a); fl.appendChild(b); item.appendChild(fl); home.insertBefore(item, rail); items.push(item); covers.push(a); flips.push(fl); links.push(b);
   });
+
+  if (window.pfI18n) window.pfI18n();
 
   /* ---------- contenido del sidebar: el recorrido (scroll) por el proyecto real ---------- */
   var W = 1280, SPEED = 170, PAUSE = 3200, pv = null;
@@ -88,10 +90,10 @@
     var c = CASES[i], d = D[c.key], tabbed = !!(d.A && d.B); cur = i; stopPv();
     document.getElementById('pv-no').textContent = c.num; document.getElementById('pv-title').innerHTML = c.nameEn ? '<span lang="es">' + esc(c.name) + '</span><span lang="en">' + esc(c.nameEn) + '</span>' : esc(c.name); document.getElementById('pv-open').href = c.href;
     var labels = tabbed ? [['Producto', 'Product'], ['Visual', 'Visual']] : [['Proyecto', 'Project']];
-    body.innerHTML = '<div class="pv-stage"><div class="pstage"><a class="hit" href="' + c.href + '" aria-label="' + esc(c.name) + '"></a></div><div class="pv-track">' +
+    body.innerHTML = '<div class="pv-stage"><div class="pstage"><a class="hit" href="' + c.href + '" aria-label="' + esc(c.name) + '"' + (c.nameEn ? ' data-label-en="' + esc(c.nameEn) + '"' : '') + '></a></div><div class="pv-track">' +
       labels.map(function (l) { return '<button type="button"><span>' + l[L()] + '</span><i><b></b></i></button>'; }).join('') + '</div></div>';
     items.forEach(function (it, k) { it.classList.toggle('is-active', k === i); links[k].setAttribute('aria-current', k === i ? 'true' : 'false'); });
-    scroller.scrollTop = 0; startPv(i);
+    scroller.scrollTop = 0; startPv(i); if (window.pfI18n) window.pfI18n();
   }
   function select(i) {
     if (i === cur || busy) return;

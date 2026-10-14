@@ -3,9 +3,23 @@
   var html = document.documentElement;
 
   /* ---- idioma (persistente) ---- */
+  /* atributos que no son texto visible: alt de imágenes, etiquetas accesibles y título de la pestaña.
+     La versión en inglés va en data-alt-en / data-label-en / data-en; la española se guarda la primera vez. */
+  function i18nAttrs(l) {
+    [['data-alt-en', 'altEs', 'alt'], ['data-label-en', 'labelEs', 'aria-label']].forEach(function (k) {
+      document.querySelectorAll('[' + k[0] + ']').forEach(function (e) {
+        if (!(k[1] in e.dataset)) e.dataset[k[1]] = e.getAttribute(k[2]) || '';
+        e.setAttribute(k[2], l === 'en' ? e.getAttribute(k[0]) : e.dataset[k[1]]);
+      });
+    });
+    var t = document.querySelector('title[data-en]');
+    if (t) { if (!t.dataset.es) t.dataset.es = t.textContent; document.title = l === 'en' ? t.dataset.en : t.dataset.es; }
+  }
+  window.pfI18n = function () { i18nAttrs(html.getAttribute('data-lang')); };
   function setLang(l) {
     html.setAttribute('data-lang', l);
     html.setAttribute('lang', l);
+    i18nAttrs(l);
     try { localStorage.setItem('pf-lang', l); } catch (e) {}
   }
   var saved = null;
